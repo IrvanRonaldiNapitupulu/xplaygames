@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-main: #080808;
+    --bg-surface: #111111;
+    --bg-card: #171717;
+    --border-color: #292929;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1AA;
+    
+    /* XPLAY Brand Logo Colors */
+    --xplay-red: #FF3038;
+    --xplay-yellow: #FFD84D;
+    --xplay-green: #75D84B;
+    --xplay-blue: #36B7F0;
+    --xplay-purple: #B45CE0;
+    --xplay-pink: #F45CB4;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom visual utilities */
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(54, 183, 240, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 35px -5px rgba(180, 92, 224, 0.25);
+}
+
+.glow-pink {
+  box-shadow: 0 0 35px -5px rgba(244, 92, 180, 0.25);
+}
+
+.glow-green {
+  box-shadow: 0 0 35px -5px rgba(117, 216, 75, 0.25);
+}
+
+.glow-yellow {
+  box-shadow: 0 0 35px -5px rgba(255, 216, 77, 0.25);
+}
+
+/* Subtle gradient text utility for accents */
+.text-xplay-accent {
+  background: linear-gradient(135deg, #36B7F0 0%, #B45CE0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth pulse animation */
+@keyframes subtlePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.95; }
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 3s ease-in-out infinite;
 }

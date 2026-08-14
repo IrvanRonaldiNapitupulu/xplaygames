@@ -1,0 +1,170 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Gamepad2, ArrowRight, RefreshCw, AlertTriangle, Clock } from "lucide-react";
+
+interface StationSummary {
+  stationId: number;
+  stationName: string;
+  consoleType: string;
+  floor: number;
+  status: "available" | "playing" | "paused" | "unavailable" | "unknown";
+  roomType: "regular" | "vip" | "vvip";
+}
+
+interface BillingResponse {
+  stations: StationSummary[];
+  updatedAt: number;
+  isStale?: boolean;
+  fromCache?: boolean;
+}
+
+export default function LiveAvailabilityWidget() {
+  const [data, setData] = useState<BillingResponse | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+  const [secondsAgo, setSecondsAgo] = useState<number>(0);
+
+  const fetchStatus = async () => {
+    setLoading(true);
+    setError(false);
+    try {
+      const res = await fetch("/api/billing");
+      if (!res.ok) throw new Error("Failed to load billing API");
+      const json = await res.json();
+      setData(json);
+      setSecondsAgo(0);
+    } catch (err) {
+      console.error(err);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchStatus();
+    const interval = setInterval(() => {
+      fetchStatus();
+    }, 30000); // Poll every 30 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (!data) return;
+    const timer = setInterval(() => {
+      const diff = Math.floor((Date.now() - data.updatedAt) / 1000);
+      setSecondsAgo(diff);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [data]);
+
+  // Calculate stats
+  const totalUnits = data?.stations?.length || 0;
+  const availableUnits = data?.stations?.filter(s => s.status === "available").length || 0;
+  const floor1Available = data?.stations?.filter(s => s.floor === 1 && s.status === "available").length || 0;
+  const floor2Available = data?.stations?.filter(s => s.floor === 2 && s.status === "available").length || 0;
+
+  return (
+    <section className="py-8 bg-[#0b0b0b] border-y border-[#1f1f1f] relative overflow-hidden">
+      {/* Background radial highlight */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-[#36B7F0]/5 rounded-full blur-[80px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-[#111111]/80 rounded-2xl border border-[#292929] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          <div className="flex items-center gap-4 flex-1">
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all ${
+              loading 
+                ? "bg-zinc-800/40 border-zinc-700 text-zinc-500 animate-pulse" 
+                : error 
+                  ? "bg-[#FF3038]/10 border-[#FF3038]/30 text-[#FF3038]" 
+                  : "bg-[#36B7F0]/10 border-[#36B7F0]/20 text-[#36B7F0]"
+            }`}>
+              <Gamepad2 className={`w-6 h-6 ${loading ? "animate-spin" : ""}`} />
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-mono tracking-widest text-[#36B7F0] font-bold uppercase">
+                  XPLAY LIVE STATUS
+                </span>
+                {data && (
+                  <span className="text-[10px] text-zinc-500 font-mono flex items-center gap-1">
+                    <Clock className="w-3 h-3" />
+                    <span>Aktif {secondsAgo}s lalu</span>
+                  </span>
+                )}
+              </div>
+
+              {loading ? (
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-zinc-600 animate-ping" />
+                  <span>Live status sedang diperbarui...</span>
+                </h3>
+              ) : error ? (
+                <div className="flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-[#FF3038]" />
+                  <h3 className="text-sm sm:text-base font-bold text-zinc-300">
+                    Live status temporarily unavailable
+                  </h3>
+                </div>
+              ) : (
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <h3 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#75D84B] animate-pulse" />
+                    <span>{availableUnits} / {totalUnits} UNIT TERSEDIA</span>
+                  </h3>
+                  <div className="text-xs sm:text-sm text-zinc-400 flex items-center gap-3">
+                    <span>Lantai 1: <strong className="text-white">{floor1Available}</strong></span>
+                    <span className="text-zinc-600">|</span>
+                    <span>Lantai 2: <strong className="text-white">{floor2Available}</strong></span>
+                  </div>
+                </div>
+              )}
+
+              {data?.isStale && (
+                <span className="text-[10px] text-[#FFD84D] font-mono block mt-1">
+                  ⚠️ Menampilkan data cadangan (stale).
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 w-full md:w-auto shrink-0">
+            {error ? (
+              <button
+                onClick={fetchStatus}
+                className="w-full md:w-auto px-5 py-3 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-[#FFD84D] font-bold text-xs flex items-center justify-center gap-2 transition-colors"
+              >
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span>Coba lagi</span>
+              </button>
+            ) : (
+              <button
+                onClick={fetchStatus}
+                className="p-3 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-zinc-400 hover:text-white transition-colors"
+                title="Refresh Status"
+                disabled={loading}
+              >
+                <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+              </button>
+            )}
+
+            <Link
+              href="/availability"
+              className="flex-1 md:flex-none px-6 py-3 rounded-xl bg-[#111111] hover:bg-[#171717] border border-[#292929] hover:border-zinc-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all group"
+            >
+              <span>LIHAT KETERSEDIAAN</span>
+              <ArrowRight className="w-3.5 h-3.5 text-zinc-500 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
