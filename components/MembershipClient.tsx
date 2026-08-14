@@ -154,94 +154,64 @@ export default function MembershipClient() {
         </div>
       </section>
 
-      {/* Cara Daftar Membership Section */}
+      {/* Cara Kerja Membership Section */}
       <section className="py-20 px-4 border-b border-[#1A1A1A] relative">
-        {/* Decorative subtle ambient light */}
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-[#FFD84D]/5 rounded-full blur-[100px] pointer-events-none"></div>
-        
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-[#FFD84D]/5 rounded-full blur-[100px] pointer-events-none" />
+
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#111111] border border-[#292929] text-[10px] font-mono tracking-widest text-[#FFD84D] uppercase mb-4">
-              REGISTRATION PROCESS
+              HOW IT WORKS
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black mb-3">CARA DAFTAR MEMBERSHIP</h2>
+            <h2 className="text-2xl sm:text-3xl font-black mb-3">CARA KERJA XPLAY MEMBERSHIP</h2>
             <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto">
-              Sangat mudah untuk menjadi member XPLAY. Ikuti langkah sederhana berikut saat kamu berkunjung:
+              Sederhana, transparan, dan langsung bisa dirasakan manfaatnya setiap kali kamu bermain.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#36B7F0]/30 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-[#36B7F0]/5 rounded-bl-full pointer-events-none"></div>
-              <div className="w-12 h-12 rounded-xl bg-[#36B7F0]/10 flex items-center justify-center text-[#36B7F0] mb-6 font-bold text-lg font-mono">01</div>
-              <h3 className="text-lg font-bold mb-2 uppercase tracking-wide">DATANG KE LOKASI</h3>
+            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#36B7F0]/40 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-[#36B7F0]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl bg-[#36B7F0]/10 flex items-center justify-center text-[#36B7F0] mb-6 font-black text-lg font-mono">01</div>
+              <h3 className="text-lg font-bold mb-3 uppercase tracking-wide">MAIN DI XPLAY</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Kunjungi lounge XPLAY Games terdekat dan temui crew atau operator kami di meja kasir.
+                Setiap transaksi billing di XPLAY Games menghasilkan poin untukmu secara otomatis.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#FFD84D]/30 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-[#FFD84D]/5 rounded-bl-full pointer-events-none"></div>
-              <div className="w-12 h-12 rounded-xl bg-[#FFD84D]/10 flex items-center justify-center text-[#FFD84D] mb-6 font-bold text-lg font-mono">02</div>
-              <h3 className="text-lg font-bold mb-2 uppercase tracking-wide">HUBUNGI OPERATOR</h3>
+            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#FFD84D]/40 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-[#FFD84D]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl bg-[#FFD84D]/10 flex items-center justify-center text-[#FFD84D] mb-6 font-black text-lg font-mono">02</div>
+              <h3 className="text-lg font-bold mb-3 uppercase tracking-wide">KUMPULKAN POIN</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Beri tahu karyawan atau operator PS yang bertugas bahwa kamu ingin membuat member baru.
+                Setiap <strong className="text-white">Rp10.000</strong> pengeluaran billing = <strong className="text-[#FFD84D]">⭐ 1 POIN</strong>. Makin sering main, makin banyak poin terkumpul.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#FF3038]/30 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-[#FF3038]/5 rounded-bl-full pointer-events-none"></div>
-              <div className="w-12 h-12 rounded-xl bg-[#FF3038]/10 flex items-center justify-center text-[#FF3038] mb-6 font-bold text-lg font-mono">03</div>
-              <h3 className="text-lg font-bold mb-2 uppercase tracking-wide">BERIKAN IDENTITAS</h3>
+            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#FF3038]/40 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-[#FF3038]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl bg-[#FF3038]/10 flex items-center justify-center text-[#FF3038] mb-6 font-black text-lg font-mono">03</div>
+              <h3 className="text-lg font-bold mb-3 uppercase tracking-wide">TUKARKAN POIN</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Berikan identitas lengkap berupa <strong className="text-white">Nama</strong>, <strong className="text-white">Email</strong>, <strong className="text-white">Nomor KTP</strong>, dan <strong className="text-white">Nomor HP</strong> aktif ke operator.
+                Gunakan poin yang sudah terkumpul untuk reward waktu bermain di XPLAY Games.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+
       {/* How It Works Section */}
       <section className="py-20 px-4 border-b border-[#1A1A1A]">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-black mb-3">CARA MENDAPATKAN POIN</h2>
             <p className="text-zinc-400 text-sm sm:text-base">
-              Setiap kelipatan <span className="text-white font-bold">Rp10.000</span> pengeluaran billing = <span className="text-[#FFD84D] font-bold">1 Poin</span>.
+              Setiap kelipatan <span className="text-white font-bold">Rp10.000</span> pengeluaran billing = <span className="text-[#FFD84D] font-bold">⭐ 1 Poin</span>.
             </p>
-          </div>
-
-          {/* Three Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#36B7F0]/30 transition-all">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#36B7F0]/5 rounded-bl-full pointer-events-none"></div>
-              <span className="text-3xl font-black text-[#36B7F0]/30 font-mono block mb-4">01</span>
-              <h3 className="text-lg font-bold mb-2 uppercase tracking-wide">SPEND</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Bermain console favoritmu di lounge XPLAY dan lakukan pembayaran billing seperti biasa.
-              </p>
-            </div>
-
-            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#FFD84D]/30 transition-all">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#FFD84D]/5 rounded-bl-full pointer-events-none"></div>
-              <span className="text-3xl font-black text-[#FFD84D]/30 font-mono block mb-4">02</span>
-              <h3 className="text-lg font-bold mb-2 uppercase tracking-wide">EARN POINTS</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Poin otomatis terakumulasi ke nomor WhatsApp atau member ID kamu setiap kelipatan Rp10.000 billing.
-              </p>
-            </div>
-
-            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#FF3038]/30 transition-all">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF3038]/5 rounded-bl-full pointer-events-none"></div>
-              <span className="text-3xl font-black text-[#FF3038]/30 font-mono block mb-4">03</span>
-              <h3 className="text-lg font-bold mb-2 uppercase tracking-wide">REDEEM</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Tukarkan poin yang telah dikumpulkan dengan berbagai voucher durasi main gratis yang kamu inginkan.
-              </p>
-            </div>
           </div>
 
           {/* Quick Rates Grid & Example Section */}

@@ -1,0 +1,54 @@
+[33mcommit 3ff5356c9e1660d7b7063ddaf5275e9b0cb200d0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: KatoPrak <irvanronaldi2@gmail.com>
+Date:   Sat Aug 15 02:00:35 2026 +0700
+
+    feat: initialize complete landing page and booking system infrastructure with modular components and business data configuration
+
+ app/api/billing/route.ts              | 126 [32m+++++++[m
+ app/availability/page.tsx             |  17 [32m+[m
+ app/favicon.ico                       | Bin [31m25931[m -> [32m55086[m bytes
+ app/globals.css                       |  94 [32m++++[m[31m-[m
+ app/icon.png                          | Bin [31m0[m -> [32m55086[m bytes
+ app/layout.tsx                        | 106 [32m+++++[m[31m-[m
+ app/membership/page.tsx               |  17 [32m+[m
+ app/page.tsx                          | 166 [32m+++++[m[31m----[m
+ app/playbox/page.tsx                  |  17 [32m+[m
+ app/sewa-ps/page.tsx                  |  17 [32m+[m
+ components/AvailabilityClient.tsx     | 472 [32m++++++++++++++++++++++++[m
+ components/BookingModal.tsx           | 231 [32m++++++++++++[m
+ components/ExperienceSection.tsx      | 197 [32m++++++++++[m
+ components/FacilitiesSection.tsx      |  94 [32m+++++[m
+ components/FinalCtaSection.tsx        |  55 [32m+++[m
+ components/FloorSection.tsx           | 139 [32m+++++++[m
+ components/Footer.tsx                 | 149 [32m++++++++[m
+ components/GallerySection.tsx         | 147 [32m++++++++[m
+ components/GamesSection.tsx           |  92 [32m+++++[m
+ components/HeroSection.tsx            | 210 [32m+++++++++++[m
+ components/HowToBookSection.tsx       | 116 [32m++++++[m
+ components/LiveAvailabilityWidget.tsx | 170 [32m+++++++++[m
+ components/LocationSection.tsx        | 123 [32m+++++++[m
+ components/MembershipClient.tsx       | 465 [32m++++++++++++++++++++++++[m
+ components/MobileStickyCTA.tsx        |  21 [32m++[m
+ components/Navbar.tsx                 | 216 [32m+++++++++++[m
+ components/PlayboxClient.tsx          | 569 [32m+++++++++++++++++++++++++++++[m
+ components/PosterModal.tsx            |  63 [32m++++[m
+ components/PricingSection.tsx         | 182 [32m++++++++++[m
+ components/SewaPSClient.tsx           | 658 [32m++++++++++++++++++++++++++++++++++[m
+ components/VipShowcase.tsx            | 177 [32m+++++++++[m
+ data/business.ts                      |  79 [32m++++[m
+ data/facilities.ts                    |  54 [32m+++[m
+ data/floors.ts                        |  55 [32m+++[m
+ data/gallery.ts                       |  47 [32m+++[m
+ data/games.ts                         |  51 [32m+++[m
+ data/pricing.ts                       | 130 [32m+++++++[m
+ package-lock.json                     |  10 [32m+[m
+ package.json                          |   1 [32m+[m
+ public/hargaxplay.jpeg                | Bin [31m0[m -> [32m274296[m bytes
+ public/lantai1.jpeg                   | Bin [31m0[m -> [32m100364[m bytes
+ public/lantai2.jpeg                   | Bin [31m0[m -> [32m97612[m bytes
+ public/playbox.jpeg                   | Bin [31m0[m -> [32m165925[m bytes
+ public/sewanontv.jpeg                 | Bin [31m0[m -> [32m135364[m bytes
+ public/vip.jpeg                       | Bin [31m0[m -> [32m102258[m bytes
+ public/vvip.jpeg                      | Bin [31m0[m -> [32m107127[m bytes
+ public/xplay.png                      | Bin [31m0[m -> [32m55086[m bytes
+ 47 files changed, 5448 insertions(+), 85 deletions(-)
