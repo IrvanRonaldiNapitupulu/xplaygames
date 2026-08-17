@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import { Gamepad2, ArrowRight, RefreshCw, AlertTriangle, Clock } from "lucide-react";
 
@@ -29,36 +29,41 @@ export default function LiveAvailabilityWidget() {
   const [error, setError] = useState<boolean>(false);
   const [secondsAgo, setSecondsAgo] = useState<number>(0);
   const [isOpenNow, setIsOpenNow] = useState<boolean>(true);
+  const isMounted = useRef(false);
 
   useEffect(() => {
     setIsOpenNow(isBusinessOpen());
   }, []);
 
-  const fetchStatus = async () => {
+  const fetchStatus = useCallback(async () => {
+    if (!isMounted.current) return;
     setLoading(true);
     setError(false);
     try {
       const res = await fetch("/api/billing");
       if (!res.ok) throw new Error("Failed to load billing API");
       const json = await res.json();
+      if (!isMounted.current) return;
       setData(json);
       setSecondsAgo(0);
     } catch (err) {
       console.error(err);
+      if (!isMounted.current) return;
       setError(true);
     } finally {
-      setLoading(false);
+      if (isMounted.current) setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
+    isMounted.current = true;
     fetchStatus();
-    const interval = setInterval(() => {
-      fetchStatus();
-    }, 30000); // Poll every 30 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+    const interval = setInterval(fetchStatus, 30000);
+    return () => {
+      isMounted.current = false;
+      clearInterval(interval);
+    };
+  }, [fetchStatus]);
 
   useEffect(() => {
     if (!data) return;
@@ -66,7 +71,6 @@ export default function LiveAvailabilityWidget() {
       const diff = Math.floor((Date.now() - data.updatedAt) / 1000);
       setSecondsAgo(diff);
     }, 1000);
-
     return () => clearInterval(timer);
   }, [data]);
 

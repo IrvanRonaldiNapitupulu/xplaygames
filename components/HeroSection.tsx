@@ -106,17 +106,41 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
               {/* Clean Card container */}
               <div className="bg-[#111318] border border-[#242832] rounded-2xl p-3.5 sm:p-4">
 
-                {/* Vertical Video Embed Frame */}
-                <div className="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-black border border-[#242832]">
-                  <iframe
-                    src="https://www.tiktok.com/player/v1/7603348601129028884?autoplay=1&muted=1&loop=1"
-                    title="XPLAY Games Official TikTok Video"
-                    className="w-full h-full border-0"
-                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </div>
+                {/* TikTok Video Poster Card */}
+                <a
+                  href="https://vt.tiktok.com/ZSV1axhA5/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-[#08090B] border border-[#242832] group"
+                >
+                  {/* Background: XPLAY branding */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6">
+                    <Image
+                      src="/xplay.png"
+                      alt="XPLAY Games"
+                      width={72}
+                      height={72}
+                      className="rounded-2xl opacity-90"
+                    />
+                    <div className="text-center">
+                      <p className="text-white font-black text-lg leading-tight">XPLAY GAMES</p>
+                      <p className="text-zinc-400 text-xs mt-1">@xplaygamesbatam</p>
+                    </div>
+                    {/* Play Button */}
+                    <div className="w-14 h-14 rounded-full bg-[#1FA6F0] flex items-center justify-center shadow-lg shadow-[#1FA6F0]/40 group-hover:scale-110 transition-transform">
+                      <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <p className="text-xs text-zinc-400 font-medium">Tap untuk nonton di TikTok</p>
+                  </div>
+                  {/* TikTok logo watermark */}
+                  <div className="absolute top-3 right-3 bg-black/60 rounded-lg p-1.5">
+                    <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
+                      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.84 1.56V6.81a4.85 4.85 0 01-1.07-.12z"/>
+                    </svg>
+                  </div>
+                </a>
 
                 {/* Quick Feature Footer */}
                 <div className="mt-3.5 pt-3 border-t border-[#242832] flex items-center justify-between">
