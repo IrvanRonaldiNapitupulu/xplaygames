@@ -18,7 +18,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "vvip-1",
-    title: "VVIP Lounge Room",
+    title: "VVIP Private Room",
     category: "VVIP",
     subtitle: "PS, Nintendo, Netflix & Private Sofa",
     imageSrc: "/vvip.jpeg",

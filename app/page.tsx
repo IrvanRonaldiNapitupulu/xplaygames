@@ -18,6 +18,7 @@ import FinalCtaSection from "@/components/FinalCtaSection";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import PosterModal from "@/components/PosterModal";
+import FloatingActions from "@/components/FloatingActions";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -98,6 +99,9 @@ export default function Home() {
 
       {/* Mobile Sticky CTA */}
       <MobileStickyCTA onOpenBooking={handleOpenBooking} />
+
+      {/* Floating Fixed WhatsApp & Back To Top */}
+      <FloatingActions onOpenBooking={handleOpenBooking} />
 
       {/* Interactive Booking Modal */}
       <BookingModal

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { PRICING_DATA, CategoryPricing } from "@/data/pricing";
+import { PRICING_DATA } from "@/data/pricing";
 import { BUSINESS_INFO } from "@/data/business";
-import { Gamepad2, Sparkles, CheckCircle2, ChevronRight, MessageCircle } from "lucide-react";
+import { CheckCircle2, ChevronRight, MessageCircle } from "lucide-react";
 
 interface ExperienceSectionProps {
   onSelectCategory: (categoryId: string) => void;
@@ -16,60 +16,46 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
   const selectedCategory = PRICING_DATA.find((c) => c.id === selectedId) || PRICING_DATA[4];
 
   return (
-    <section id="experience" className="py-20 bg-[#080808] border-t border-[#292929] relative overflow-hidden">
+    <section id="experience" className="py-16 bg-[#080808] border-t border-[#1f1f1f]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111111] border border-[#292929] text-xs font-mono tracking-widest text-[#36B7F0] uppercase mb-4">
-            <Gamepad2 className="w-4 h-4" />
-            <span>FIND YOUR PLAY STYLE</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
-            PILIH PENGALAMAN GAMING KAMU
+        {/* Section Header (Left-aligned, clean, no AI pill) */}
+        <div className="max-w-3xl mb-10">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+            Pilih Pengalaman Gaming Kamu
           </h2>
-          <p className="text-zinc-400 text-base sm:text-lg">
-            Dari mabar kasual PS4 sampai VVIP Private Lounge lengkap dengan Nintendo & Netflix. Pilih yang sesuai gaya kamu.
+          <p className="text-zinc-400 text-base">
+            Dari mabar kasual PS4 sampai VVIP Private Room lengkap dengan Nintendo & Netflix. Pilih yang sesuai gaya kamu.
           </p>
         </div>
 
-        {/* 5 Selector Tabs */}
-        <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-12">
+        {/* Selector Tabs (Clean open list) */}
+        <div className="flex items-center gap-2 flex-wrap mb-10 border-b border-[#1f1f1f] pb-4">
           {PRICING_DATA.map((cat) => {
             const isSelected = cat.id === selectedId;
+            const isVVIP = cat.id === "vvip";
+            const activeBorderColor = isVVIP ? "#FF2D8D" : "#22C7F2";
             return (
               <button
                 key={cat.id}
                 onClick={() => setSelectedId(cat.id)}
-                className={`relative px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-300 flex items-center gap-2.5 ${
+                className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-colors flex items-center gap-2 ${
                   isSelected
-                    ? "bg-[#171717] text-white border-2 shadow-lg scale-105"
-                    : "bg-[#111111] text-zinc-400 border border-[#292929] hover:text-white hover:border-zinc-700"
+                    ? "bg-[#111318] text-white border"
+                    : "text-zinc-400 hover:text-white border border-transparent"
                 }`}
                 style={{
-                  borderColor: isSelected ? cat.accentColor : undefined,
-                  boxShadow: isSelected ? `0 0 20px ${cat.bgGlow}` : undefined,
+                  borderColor: isSelected ? activeBorderColor : "transparent",
                 }}
               >
-                {isSelected ? (
-                  <img
-                    src="/xplay.png"
-                    alt="XPLAY Logo"
-                    className="w-4 h-4 object-contain animate-pulse"
-                  />
-                ) : (
-                  <span
-                    className="w-2 h-2 rounded-full"
-                    style={{ backgroundColor: cat.accentColor }}
-                  />
-                )}
+                <span
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: isVVIP ? "#FF2D8D" : "#22C7F2" }}
+                />
                 <span>{cat.name}</span>
-                {cat.badge && (
-                  <span
-                    className="text-[10px] font-mono px-1.5 py-0.5 rounded text-black font-extrabold uppercase ml-1"
-                    style={{ backgroundColor: cat.accentColor }}
-                  >
-                    {cat.badge}
+                {cat.startingPrice && (
+                  <span className="text-xs text-zinc-500 font-normal">
+                    {cat.startingPrice}
                   </span>
                 )}
               </button>
@@ -77,112 +63,109 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
           })}
         </div>
 
-        {/* Category Detail Showcase Card */}
-        <div
-          className="bg-[#111111] border-2 rounded-3xl p-6 sm:p-10 transition-all duration-500 shadow-2xl relative overflow-hidden"
-          style={{ borderColor: selectedCategory.accentColor }}
-        >
-          {/* Subtle Corner Glow */}
-          <div
-            className="absolute top-0 right-0 w-80 h-80 rounded-full blur-3xl pointer-events-none opacity-20"
-            style={{ backgroundColor: selectedCategory.accentColor }}
-          />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        {/* Category Detail (Open Layout with subtle borders) */}
+        <div className="bg-[#111318] border border-[#242832] rounded-2xl p-6 sm:p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Left Content */}
             <div className="lg:col-span-7 flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-3">
                 <span
-                  className="px-3 py-1 rounded-full text-xs font-mono font-extrabold text-black uppercase"
-                  style={{ backgroundColor: selectedCategory.accentColor }}
+                  className="text-xs font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded"
+                  style={{
+                    backgroundColor: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2",
+                    color: selectedCategory.id === "vvip" ? "#ffffff" : "#000000",
+                  }}
                 >
-                  {selectedCategory.name} EXPERIENCE
+                  {selectedCategory.name}
                 </span>
-                {selectedCategory.badge && (
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#171717] text-zinc-300 border border-[#292929]">
-                    {selectedCategory.badge}
-                  </span>
-                )}
               </div>
 
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                 {selectedCategory.name} Gaming Unit
               </h3>
               
-              <p className="text-zinc-300 text-base sm:text-lg mb-8 leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base mb-6 leading-relaxed">
                 {selectedCategory.description}
               </p>
 
-              {/* Feature Checklist */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {/* Feature List */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
                 {selectedCategory.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 bg-[#171717] p-3 rounded-xl border border-[#292929]">
+                  <div key={idx} className="flex items-center gap-2 text-sm text-zinc-300">
                     <CheckCircle2
-                      className="w-5 h-5 shrink-0"
-                      style={{ color: selectedCategory.accentColor }}
+                      className="w-4 h-4 shrink-0"
+                      style={{ color: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2" }}
                     />
-                    <span className="text-sm font-medium text-zinc-200">{feat}</span>
+                    <span>{feat}</span>
                   </div>
                 ))}
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center gap-3">
                 <button
                   onClick={() => onOpenBooking(selectedCategory.name)}
-                  className="w-full sm:w-auto rounded-xl font-bold px-7 py-3.5 text-black text-sm flex items-center justify-center gap-2 transition-transform hover:scale-105 active:scale-95 shadow-md"
-                  style={{ backgroundColor: selectedCategory.accentColor }}
+                  className="w-full sm:w-auto rounded-xl font-bold px-6 py-3 text-black text-sm flex items-center justify-center gap-2 transition-opacity hover:opacity-90"
+                  style={{
+                    backgroundColor: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2",
+                    color: selectedCategory.id === "vvip" ? "#ffffff" : "#000000",
+                  }}
                 >
-                  <MessageCircle className="w-4 h-4 fill-black/20" />
-                  <span>BOOK {selectedCategory.name} SEKARANG</span>
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Book {selectedCategory.name} Sekarang</span>
                 </button>
 
                 <a
                   href="#pricing"
                   onClick={() => onSelectCategory(selectedCategory.id)}
-                  className="w-full sm:w-auto rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-zinc-300 font-semibold px-6 py-3.5 text-sm flex items-center justify-center gap-2 transition-colors"
+                  className="w-full sm:w-auto rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-zinc-300 font-semibold px-5 py-3 text-sm flex items-center justify-center gap-2 transition-colors"
                 >
-                  <span>Lihat Rincian Tarif Jam</span>
+                  <span>Lihat Rincian Tarif</span>
                   <ChevronRight className="w-4 h-4 text-zinc-500" />
                 </a>
               </div>
             </div>
 
-            {/* Right Price Highlight Box */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-sm bg-[#171717] border border-[#292929] p-8 rounded-2xl text-center relative flex flex-col items-center">
-                <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-2">
-                  TARIF MULAI DARI
-                </span>
-                
-                <div
-                  className="text-4xl sm:text-5xl font-black mb-1"
-                  style={{ color: selectedCategory.accentColor }}
-                >
-                  {selectedCategory.startingPrice}
+            {/* Right Price Box */}
+            <div className="lg:col-span-5 flex justify-center w-full">
+              <div className="w-full bg-[#08090B] border border-[#242832] p-6 rounded-xl flex flex-col">
+                <div className="flex items-baseline justify-between mb-4 pb-4 border-b border-[#1f1f1f]">
+                  <div>
+                    <span className="text-xs text-zinc-400 block mb-0.5">Tarif per jam</span>
+                    {selectedCategory.originalPrice && (
+                      <span className="text-xs line-through text-zinc-500 block">
+                        {selectedCategory.originalPrice}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-right">
+                    <span
+                      className="text-3xl font-black"
+                      style={{ color: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2" }}
+                    >
+                      {selectedCategory.startingPrice}
+                    </span>
+                    <span className="text-xs text-zinc-400 font-normal"> / jam</span>
+                  </div>
                 </div>
-                
-                <span className="text-sm font-semibold text-zinc-400 mb-6">
-                  / jam
-                </span>
 
-                <div className="w-full pt-6 border-t border-[#292929] flex flex-col gap-2 text-xs text-zinc-400">
-                  <div className="flex justify-between py-1 border-b border-[#292929]/50">
+                <div className="space-y-2 text-xs text-zinc-400 mb-4">
+                  <div className="flex justify-between py-1 border-b border-[#1f1f1f]">
                     <span>1 Jam</span>
                     <strong className="text-white">{selectedCategory.rates[0]?.formattedPrice}</strong>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[#292929]/50">
+                  <div className="flex justify-between py-1 border-b border-[#1f1f1f]">
                     <span>3 Jam</span>
                     <strong className="text-white">{selectedCategory.rates[2]?.formattedPrice}</strong>
                   </div>
                   <div className="flex justify-between py-1">
                     <span>8 Jam (Paket Hemat)</span>
-                    <strong className="text-[#75D84B] font-bold">{selectedCategory.rates[7]?.formattedPrice}</strong>
+                    <strong className="text-[#22C7F2] font-bold">{selectedCategory.rates[7]?.formattedPrice}</strong>
                   </div>
                 </div>
 
-                <div className="mt-6 text-[11px] text-zinc-500 italic">
+                <div className="text-[11px] text-zinc-500">
                   *Tarif resmi per {BUSINESS_INFO.ratesEffectiveDate}
                 </div>
               </div>

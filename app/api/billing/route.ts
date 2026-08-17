@@ -80,6 +80,15 @@ export async function GET() {
         roomType = "vip";
       }
 
+      const queueList = Array.isArray(raw.antrian)
+        ? raw.antrian.map((q: any) => ({
+            nama: q.nama || "Pelanggan",
+            mulai: q.mulai ? String(q.mulai).slice(0, 5) : "",
+            selesai: q.selesai ? String(q.selesai).slice(0, 5) : "",
+            catatan: q.catatan || "",
+          }))
+        : [];
+
       return {
         stationId: raw.idStation,
         stationName: raw.namaStation,
@@ -90,7 +99,8 @@ export async function GET() {
         elapsedSeconds: raw.elapsedSec || null,
         remainingSeconds: raw.sisaSec || null,
         estimatedFinishAt: raw.waktuBerakhirStr || null,
-        queueCount: raw.antrianCount || 0,
+        queueCount: raw.antrianCount || queueList.length || 0,
+        queueList,
       };
     });
 

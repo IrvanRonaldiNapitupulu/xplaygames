@@ -22,25 +22,25 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://xplaygames.com"),
-  title: "XPLAY Games — Rental PS4, PS5, VIP & VVIP Gaming Lounge",
+  title: "XPLAY Games — Rental PS4, PS5, VIP & VVIP Gaming Place",
   description:
-    "Nikmati pengalaman PlayStation Gaming Lounge terbaik di XPLAY Games. Pilihan PS4, PS4+, PS5, VIP Room, hingga VVIP Room dengan PlayStation, Nintendo & Netflix. Buka 10:00 — 03:00 WIB.",
+    "Nikmati pengalaman PlayStation Gaming terbaik di XPLAY Games. Pilihan PS4, PS4+, PS5, VIP Room, hingga VVIP Room dengan PlayStation, Nintendo & Netflix. Buka 10:00 — 03:00 WIB.",
   keywords: [
     "XPLAY Games",
     "Rental PS",
     "Rental PS5",
     "Rental PS4",
-    "Gaming Lounge",
+    "Gaming Place",
     "VIP Gaming Room",
     "VVIP Nintendo Netflix",
     "Tempat Mabar PS",
-    "PS Lounge Bandung",
+    "Rental PS Batam",
   ],
   authors: [{ name: "XPLAY Games" }],
   openGraph: {
-    title: "XPLAY Games — Rental PS4, PS5, VIP & VVIP Gaming Lounge",
+    title: "XPLAY Games — Rental PS4, PS5, VIP & VVIP Gaming Place",
     description:
-      "Main. Mabar. Menang. Ulangi. Temukan pengalaman gaming lounge terbaik dari PS4 hingga VVIP Private Room.",
+      "Main. Mabar. Menang. Ulangi. Temukan pengalaman gaming terbaik dari PS4 hingga VVIP Private Room.",
     url: "https://xplaygames.com",
     siteName: "XPLAY Games",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         url: "/xplay.png",
         width: 800,
         height: 800,
-        alt: "XPLAY Games Logo & Lounge",
+        alt: "XPLAY Games Logo",
       },
     ],
     locale: "id_ID",
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "XPLAY Games — Rental PS4, PS5, VIP & VVIP Gaming Lounge",
-    description: "Gaming lounge modern dengan 20 unit setup, VIP & VVIP room.",
+    title: "XPLAY Games — Rental PS4, PS5, VIP & VVIP Gaming Place",
+    description: "Gaming place modern dengan 20 unit setup, VIP & VVIP room.",
     images: ["/xplay.png"],
   },
   robots: {

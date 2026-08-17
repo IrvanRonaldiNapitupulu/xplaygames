@@ -22,13 +22,13 @@ export const FACILITIES_DATA: FacilityCategory[] = [
     ],
   },
   {
-    title: "Private Lounges",
+    title: "Private Rooms",
     subtitle: "Pengalaman Private Exklusif",
     iconName: "Crown",
     accentColor: "#B45CE0",
     items: [
       { name: "VIP Room", description: "Ruangan khusus dengan PS5 untuk mabar lebih privat dan fokus." },
-      { name: "VVIP Room", description: "Ruangan privat paling lengkap dengan PlayStation, Nintendo, & TV Netflix." },
+      { name: "VVIP Room", description: "Ruangan privat paling lengkap dengan PS5 (4 Stik DualSense), Nintendo Switch, & TV Netflix." },
     ],
   },
   {

@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import FloatingActions from "@/components/FloatingActions";
 import {
   MessageCircle,
   ShieldAlert,
@@ -186,7 +187,7 @@ export default function SewaPSClient() {
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <a
                   href="#booking-calculator"
-                  className="rounded-xl bg-gradient-to-r from-[#36B7F0] to-[#2b96c7] text-black font-extrabold px-8 py-4 text-center shadow-lg transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                  className="rounded-xl bg-[#22C7F2] text-black font-extrabold px-8 py-4 text-center transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5 fill-black/20" />
                   <span>BOOKING SEWA PS</span>
@@ -348,7 +349,7 @@ export default function SewaPSClient() {
                 <h3 className="text-xl sm:text-2xl font-black text-white">LAYANAN PENGANTARAN</h3>
               </div>
               <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
-                Untuk menjaga keamanan perangkat selama proses serah terima dan pemeriksaan jaminan fisik, penyewa diwajibkan untuk mengambil dan mengembalikan unit langsung ke lokasi lounge XPLAY Games.
+                Untuk menjaga keamanan perangkat selama proses serah terima dan pemeriksaan jaminan fisik, penyewa diwajibkan untuk mengambil dan mengembalikan unit langsung ke lokasi XPLAY Games.
               </p>
             </div>
             <div className="p-4 rounded-2xl bg-[#FF3038]/10 border border-[#FF3038]/30 flex items-start gap-3">
@@ -425,8 +426,7 @@ export default function SewaPSClient() {
 
         {/* Damage Penalties & Late Fees Warning */}
         <section className="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#111111] border-2 border-[#FF3038]/30 rounded-3xl p-6 sm:p-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF3038]/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="bg-[#111318] border border-[#FF3038]/30 rounded-3xl p-6 sm:p-8 relative">
             
             <div className="flex items-center gap-3 text-[#FF3038] mb-6">
               <ShieldAlert className="w-6 h-6" />
@@ -479,18 +479,18 @@ export default function SewaPSClient() {
         </section>
 
         {/* Product Comparison Section */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-[#292929]">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-mono text-[#36B7F0] font-bold uppercase tracking-wider block mb-2">PRODUCT DISTINCTION</span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">PERBANDINGAN LAYANAN XPLAY</h2>
+        <section className="mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-mono text-[#36B7F0] uppercase font-bold tracking-widest block mb-2">COMPARE & DECIDE</span>
+            <h2 className="text-3xl font-black text-white">BANDINGKAN PILIHAN BERMAIN</h2>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-[#292929]">
+          <div className="overflow-x-auto rounded-3xl border border-[#292929] bg-[#111111]/80 backdrop-blur">
             <table className="w-full text-left border-collapse text-sm">
               <thead>
                 <tr className="bg-[#111111] border-b border-[#292929]">
                   <th className="p-4 font-mono text-xs text-zinc-400 uppercase">FITUR / LAYANAN</th>
-                  <th className="p-4 font-mono text-xs text-[#36B7F0] uppercase">MAIN DI XPLAY (LOUNGE)</th>
+                  <th className="p-4 font-mono text-xs text-[#36B7F0] uppercase">MAIN DI LOKASI XPLAY</th>
                   <th className="p-4 font-mono text-xs text-[#75D84B] uppercase">SEWA PS (BAWA PULANG)</th>
                   <th className="p-4 font-mono text-xs text-[#F45CB4] uppercase">PLAYBOX (PAKET + TV)</th>
                 </tr>
@@ -510,7 +510,7 @@ export default function SewaPSClient() {
                 </tr>
                 <tr>
                   <td className="p-4 font-semibold text-zinc-300">Televisi (TV)</td>
-                  <td className="p-4 text-[#75D84B]">✓ (VIP / Lounge Display)</td>
+                  <td className="p-4 text-[#75D84B]">✓ (VIP / Room Display)</td>
                   <td className="p-4 text-zinc-600">—</td>
                   <td className="p-4 text-[#75D84B]">✓ (TV 32 inch)</td>
                 </tr>
@@ -534,7 +534,7 @@ export default function SewaPSClient() {
                 </tr>
                 <tr className="bg-[#111111]/30">
                   <td className="p-4 font-semibold text-zinc-300">Rekomendasi Untuk</td>
-                  <td className="p-4 text-[#36B7F0] font-medium text-xs">Mabar seru & nongkrong lounge</td>
+                  <td className="p-4 text-[#36B7F0] font-medium text-xs">Mabar seru & nongkrong di tempat</td>
                   <td className="p-4 text-[#75D84B] font-medium text-xs">Gaming santai di rumah sendiri</td>
                   <td className="p-4 text-[#F45CB4] font-medium text-xs">Mabar lengkap di rumah tanpa TV sendiri</td>
                 </tr>
@@ -648,6 +648,8 @@ export default function SewaPSClient() {
 
       <Footer onOpenBooking={() => setIsBookingOpen(true)} />
       
+      <FloatingActions onOpenBooking={() => setIsBookingOpen(true)} />
+
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Gamepad2, ArrowRight, RefreshCw, AlertTriangle, Clock } from "lucide-react";
 
+import { BUSINESS_INFO, isBusinessOpen } from "@/data/business";
+
 interface StationSummary {
   stationId: number;
   stationName: string;
@@ -11,6 +13,7 @@ interface StationSummary {
   floor: number;
   status: "available" | "playing" | "paused" | "unavailable" | "unknown";
   roomType: "regular" | "vip" | "vvip";
+  queueCount?: number;
 }
 
 interface BillingResponse {
@@ -25,6 +28,11 @@ export default function LiveAvailabilityWidget() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
   const [secondsAgo, setSecondsAgo] = useState<number>(0);
+  const [isOpenNow, setIsOpenNow] = useState<boolean>(true);
+
+  useEffect(() => {
+    setIsOpenNow(isBusinessOpen());
+  }, []);
 
   const fetchStatus = async () => {
     setLoading(true);
@@ -67,24 +75,25 @@ export default function LiveAvailabilityWidget() {
   const availableUnits = data?.stations?.filter(s => s.status === "available").length || 0;
   const floor1Available = data?.stations?.filter(s => s.floor === 1 && s.status === "available").length || 0;
   const floor2Available = data?.stations?.filter(s => s.floor === 2 && s.status === "available").length || 0;
+  const totalQueue = data?.stations?.reduce((acc, s) => acc + (s.queueCount || 0), 0) || 0;
 
   return (
-    <section className="py-8 bg-[#0b0b0b] border-y border-[#1f1f1f] relative overflow-hidden">
-      {/* Background radial highlight */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-[#36B7F0]/5 rounded-full blur-[80px] pointer-events-none" />
+    <section className="py-8 bg-[#08090B] border-y border-[#242832] relative">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-[#111111]/80 rounded-2xl border border-[#292929] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           
           <div className="flex items-center gap-4 flex-1">
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all ${
-              loading 
-                ? "bg-zinc-800/40 border-zinc-700 text-zinc-500 animate-pulse" 
-                : error 
-                  ? "bg-[#FF3038]/10 border-[#FF3038]/30 text-[#FF3038]" 
-                  : "bg-[#36B7F0]/10 border-[#36B7F0]/20 text-[#36B7F0]"
+              !isOpenNow
+                ? "bg-[#FF3038]/10 border-[#FF3038]/30 text-[#FF3038]"
+                : loading 
+                  ? "bg-zinc-800/40 border-zinc-700 text-zinc-500 animate-pulse" 
+                  : error 
+                    ? "bg-[#FF3038]/10 border-[#FF3038]/30 text-[#FF3038]" 
+                    : "bg-[#36B7F0]/10 border-[#36B7F0]/20 text-[#36B7F0]"
             }`}>
-              <Gamepad2 className={`w-6 h-6 ${loading ? "animate-spin" : ""}`} />
+              <Gamepad2 className={`w-6 h-6 ${loading && isOpenNow ? "animate-spin" : ""}`} />
             </div>
 
             <div>
@@ -92,7 +101,7 @@ export default function LiveAvailabilityWidget() {
                 <span className="text-xs font-mono tracking-widest text-[#36B7F0] font-bold uppercase">
                   XPLAY LIVE STATUS
                 </span>
-                {data && (
+                {data && isOpenNow && (
                   <span className="text-[10px] text-zinc-500 font-mono flex items-center gap-1">
                     <Clock className="w-3 h-3" />
                     <span>Aktif {secondsAgo}s lalu</span>
@@ -100,7 +109,17 @@ export default function LiveAvailabilityWidget() {
                 )}
               </div>
 
-              {loading ? (
+              {!isOpenNow ? (
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-[#FF3038] text-lg sm:text-xl font-extrabold flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#FF3038]" />
+                    <span>XPLAY SEDANG TUTUP (CLOSED)</span>
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-400">
+                    Jam operasional: <strong className="text-white">{BUSINESS_INFO.operatingHoursText}</strong>. Silakan cek kembali ketersediaan unit real-time saat jam buka pukul 10:00 WIB.
+                  </p>
+                </div>
+              ) : loading ? (
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-zinc-600 animate-ping" />
                   <span>Live status sedang diperbarui...</span>
@@ -118,10 +137,16 @@ export default function LiveAvailabilityWidget() {
                     <span className="w-3 h-3 rounded-full bg-[#75D84B] animate-pulse" />
                     <span>{availableUnits} / {totalUnits} UNIT TERSEDIA</span>
                   </h3>
-                  <div className="text-xs sm:text-sm text-zinc-400 flex items-center gap-3">
+                  <div className="text-xs sm:text-sm text-zinc-400 flex flex-wrap items-center gap-3">
                     <span>Lantai 1: <strong className="text-white">{floor1Available}</strong></span>
                     <span className="text-zinc-600">|</span>
                     <span>Lantai 2: <strong className="text-white">{floor2Available}</strong></span>
+                    {totalQueue > 0 && (
+                      <>
+                        <span className="text-zinc-600">|</span>
+                        <span className="text-[#FFD84D] font-bold">Total Antrian: {totalQueue}</span>
+                      </>
+                    )}
                   </div>
                 </div>
               )}

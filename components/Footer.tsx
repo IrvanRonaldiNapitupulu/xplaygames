@@ -18,11 +18,11 @@ export default function Footer({ onOpenBooking }: FooterProps) {
     <footer className="bg-[#050505] border-t border-[#292929] text-zinc-400 pt-16 pb-24 md:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#1f1f1f]">
-          
+
           {/* Brand Col */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <Link href="/" className="flex items-center gap-3 mb-4 group">
-              <div className="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-[#36B7F0] to-[#B45CE0]">
+              <div className="w-10 h-10 rounded-full p-0.5 bg-[#242832]">
                 <div className="w-full h-full bg-[#080808] rounded-full flex items-center justify-center overflow-hidden">
                   <Image
                     src="/xplay.png"
@@ -42,7 +42,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
               &quot;{BUSINESS_INFO.taglineIndo}&quot;
             </p>
             <p className="text-zinc-500 text-xs max-w-sm mb-6 leading-relaxed">
-              PlayStation Gaming Lounge modern dengan 20 unit setup gaming, Floor 01 Smoking Area & Floor 02 No-Smoking Area, VIP PS5 & VVIP Nintendo/Netflix Lounge.
+              PlayStation Gaming Place modern dengan 20 unit setup gaming, Floor 01 Smoking Area & Floor 02 No-Smoking Area, VIP PS5 & VVIP Nintendo/Netflix Room.
             </p>
 
             <button
@@ -87,17 +87,17 @@ export default function Footer({ onOpenBooking }: FooterProps) {
               </li>
               <li>
                 <Link href="/#pricing" className="hover:text-[#36B7F0] transition-colors">
-                  Daftar Harga Lounge
+                  Daftar Harga Main
                 </Link>
               </li>
               <li>
                 <Link href="/#facilities" className="hover:text-[#36B7F0] transition-colors">
-                  Fasilitas Lounge
+                  Fasilitas
                 </Link>
               </li>
               <li>
                 <Link href="/#location" className="hover:text-[#36B7F0] transition-colors">
-                  Lokasi Lounge
+                  Lokasi
                 </Link>
               </li>
             </ul>
@@ -119,19 +119,6 @@ export default function Footer({ onOpenBooking }: FooterProps) {
                 </span>
               </div>
             </div>
-
-            <div className="flex items-center justify-between pt-4">
-              <span className="text-xs text-zinc-500 font-mono">
-                XPLAY GAMES LOUNGE
-              </span>
-              <button
-                onClick={scrollToTop}
-                className="p-2.5 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-zinc-300 hover:text-white transition-colors"
-                title="Kembali ke atas"
-              >
-                <ArrowUp className="w-4 h-4" />
-              </button>
-            </div>
           </div>
 
         </div>
@@ -140,7 +127,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
           <p>© {new Date().getFullYear()} XPLAY GAMES. All rights reserved.</p>
           <p className="font-mono text-[11px]">
-            Designed for Modern Gaming Lounge Experience
+            Designed for Modern Gaming Experience
           </p>
         </div>
       </div>

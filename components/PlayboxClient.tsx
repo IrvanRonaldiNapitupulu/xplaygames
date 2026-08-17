@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import FloatingActions from "@/components/FloatingActions";
 import {
   MessageCircle,
   ShieldAlert,
@@ -147,7 +148,7 @@ export default function PlayboxClient() {
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <a
                   href="#booking-calculator"
-                  className="rounded-xl bg-gradient-to-r from-[#F45CB4] to-[#c74ba1] text-black font-extrabold px-8 py-4 text-center shadow-lg transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                  className="rounded-xl bg-[#FF2D8D] text-white font-extrabold px-8 py-4 text-center transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5 fill-black/20" />
                   <span>BOOKING PLAYBOX</span>
@@ -377,8 +378,7 @@ export default function PlayboxClient() {
 
         {/* Damage Penalties Warning */}
         <section className="py-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#111111] border-2 border-[#FF3038]/30 rounded-3xl p-6 sm:p-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF3038]/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="bg-[#111318] border border-[#FF3038]/30 rounded-3xl p-6 sm:p-8 relative">
             
             <div className="flex items-center gap-3 text-[#FF3038] mb-6">
               <ShieldAlert className="w-6 h-6" />
@@ -418,7 +418,7 @@ export default function PlayboxClient() {
               <thead>
                 <tr className="bg-[#111111] border-b border-[#292929]">
                   <th className="p-4 font-mono text-xs text-zinc-400 uppercase">FITUR / LAYANAN</th>
-                  <th className="p-4 font-mono text-xs text-[#36B7F0] uppercase">MAIN DI XPLAY (LOUNGE)</th>
+                  <th className="p-4 font-mono text-xs text-[#36B7F0] uppercase">MAIN DI LOKASI XPLAY</th>
                   <th className="p-4 font-mono text-xs text-[#75D84B] uppercase">SEWA PS (BAWA PULANG)</th>
                   <th className="p-4 font-mono text-xs text-[#F45CB4] uppercase">PLAYBOX (PAKET + TV)</th>
                 </tr>
@@ -438,7 +438,7 @@ export default function PlayboxClient() {
                 </tr>
                 <tr>
                   <td className="p-4 font-semibold text-zinc-300">Televisi (TV)</td>
-                  <td className="p-4 text-[#75D84B]">✓ (VIP / Lounge Display)</td>
+                  <td className="p-4 text-[#75D84B]">✓ (VIP / Room Display)</td>
                   <td className="p-4 text-zinc-600">—</td>
                   <td className="p-4 text-[#75D84B]">✓ (TV 32 inch)</td>
                 </tr>
@@ -462,7 +462,7 @@ export default function PlayboxClient() {
                 </tr>
                 <tr className="bg-[#111111]/30">
                   <td className="p-4 font-semibold text-zinc-300">Rekomendasi Untuk</td>
-                  <td className="p-4 text-[#36B7F0] font-medium text-xs">Mabar seru & nongkrong lounge</td>
+                  <td className="p-4 text-[#36B7F0] font-medium text-xs">Mabar seru & nongkrong di tempat</td>
                   <td className="p-4 text-[#75D84B] font-medium text-xs">Gaming santai di rumah sendiri</td>
                   <td className="p-4 text-[#F45CB4] font-medium text-xs">Mabar lengkap di rumah tanpa TV sendiri</td>
                 </tr>
@@ -560,6 +560,8 @@ export default function PlayboxClient() {
 
       <Footer onOpenBooking={() => setIsBookingOpen(true)} />
       
+      <FloatingActions onOpenBooking={() => setIsBookingOpen(true)} />
+
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}

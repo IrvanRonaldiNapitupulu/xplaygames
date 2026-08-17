@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Star, ArrowRight, ShieldAlert, Award, Sparkles, HelpCircle, PhoneCall } from "lucide-react";
+import { ArrowRight, ShieldAlert, Award, HelpCircle, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 
 // Definisi data reward koin membership
 const REWARD_DATA = {
@@ -130,18 +131,10 @@ export default function MembershipClient() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden border-b border-[#1A1A1A]">
-        {/* Glow Background */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#36B7F0]/10 rounded-full blur-[120px] pointer-events-none"></div>
-        
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111111] border border-[#292929] text-xs font-mono tracking-widest text-[#36B7F0] uppercase mb-6">
-            <Award className="w-3.5 h-3.5 text-[#36B7F0]" />
-            XPLAY MEMBERSHIP
-          </div>
-          
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-none mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-none mb-6 text-white">
             MAIN LEBIH SERING.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#36B7F0] via-white to-[#FF3038]">
+            <span className="text-[#22C7F2]">
               KUMPULKAN POIN.
             </span><br />
             MAIN LAGI.
@@ -156,7 +149,6 @@ export default function MembershipClient() {
 
       {/* Cara Kerja Membership Section */}
       <section className="py-20 px-4 border-b border-[#1A1A1A] relative">
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-[#FFD84D]/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -186,7 +178,7 @@ export default function MembershipClient() {
               <div className="w-12 h-12 rounded-xl bg-[#FFD84D]/10 flex items-center justify-center text-[#FFD84D] mb-6 font-black text-lg font-mono">02</div>
               <h3 className="text-lg font-bold mb-3 uppercase tracking-wide">KUMPULKAN POIN</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Setiap <strong className="text-white">Rp10.000</strong> pengeluaran billing = <strong className="text-[#FFD84D]">⭐ 1 POIN</strong>. Makin sering main, makin banyak poin terkumpul.
+                Setiap <strong className="text-white">Rp10.000</strong> pengeluaran billing = <strong className="text-[#FFD84D]">1 POIN</strong>. Makin sering main, makin banyak poin terkumpul.
               </p>
             </div>
 
@@ -210,7 +202,7 @@ export default function MembershipClient() {
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-black mb-3">CARA MENDAPATKAN POIN</h2>
             <p className="text-zinc-400 text-sm sm:text-base">
-              Setiap kelipatan <span className="text-white font-bold">Rp10.000</span> pengeluaran billing = <span className="text-[#FFD84D] font-bold">⭐ 1 Poin</span>.
+              Setiap kelipatan <span className="text-white font-bold">Rp10.000</span> pengeluaran billing = <span className="text-[#FFD84D] font-bold">1 Poin</span>.
             </p>
           </div>
 
@@ -220,7 +212,6 @@ export default function MembershipClient() {
             <div className="bg-[#111111] border border-[#222222] p-8 rounded-3xl lg:col-span-7 flex flex-col justify-between">
               <div>
                 <h4 className="text-sm font-mono tracking-widest text-[#FFD84D] uppercase mb-6 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#FFD84D]" />
                   TABEL SKEMA PEROLEHAN POIN
                 </h4>
                 
@@ -232,7 +223,6 @@ export default function MembershipClient() {
                     >
                       <span className="text-xs sm:text-sm font-semibold text-zinc-300">{ex.spent}</span>
                       <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#FFD84D]">
-                        <span>⭐</span>
                         <span>{ex.points} {ex.points === 1 ? "Poin" : "Poin"}</span>
                       </div>
                     </div>
@@ -242,8 +232,7 @@ export default function MembershipClient() {
             </div>
 
             {/* Visual Example Simulation Card */}
-            <div className="bg-gradient-to-br from-[#111111] to-[#181818] border border-[#222222] p-8 rounded-3xl lg:col-span-5 flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute -top-16 -right-16 w-36 h-36 bg-[#36B7F0]/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div className="bg-[#111318] border border-[#242832] p-8 rounded-3xl lg:col-span-5 flex flex-col justify-between relative">
               
               <div>
                 <h4 className="text-sm font-mono tracking-widest text-[#36B7F0] uppercase mb-6">SIMULASI ALUR POIN</h4>
@@ -266,7 +255,7 @@ export default function MembershipClient() {
                   <div className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-[#FFD84D]/10 border border-[#FFD84D]/30 text-xs font-mono text-[#FFD84D] flex items-center justify-center shrink-0 mt-0.5">B</span>
                     <p className="text-xs sm:text-sm text-zinc-300 leading-snug">
-                      ⭐ Kamu mendapatkan <strong className="text-[#FFD84D]">10 poin</strong>.
+                      Kamu mendapatkan <strong className="text-[#FFD84D]">10 poin</strong>.
                     </p>
                   </div>
 
@@ -346,11 +335,6 @@ export default function MembershipClient() {
                 key={idx} 
                 className="bg-[#111111] border border-[#222222] rounded-2xl p-6 relative overflow-hidden group hover:border-[#36B7F0]/30 transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Accent glow on hover */}
-                <div 
-                  className="absolute top-0 right-0 w-24 h-24 rounded-full blur-2xl opacity-10 group-hover:opacity-20 transition-opacity"
-                  style={{ backgroundColor: currentCategory.accent }}
-                ></div>
 
                 {/* Card Top */}
                 <div className="mb-6 relative z-10">
@@ -376,8 +360,7 @@ export default function MembershipClient() {
                 <div className="pt-4 border-t border-[#1C1C1C] flex items-center justify-between relative z-10">
                   <div className="text-zinc-400 text-xs">Poin Dibutuhkan:</div>
                   <div className="flex items-center gap-1 text-base font-black text-[#FFD84D] font-mono">
-                    <span>⭐</span>
-                    <span>{item.points}</span>
+                    <span>{item.points} Poin</span>
                   </div>
                 </div>
               </div>
@@ -405,10 +388,7 @@ export default function MembershipClient() {
         </div>
       </section>
 
-      {/* Final CTA Footer Banner */}
       <section className="py-24 px-4 relative overflow-hidden bg-[#070707] text-center">
-        {/* Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#FF3038]/5 rounded-full blur-[100px] pointer-events-none"></div>
         
         <div className="max-w-xl mx-auto relative z-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight">
@@ -430,6 +410,8 @@ export default function MembershipClient() {
       </section>
 
       <Footer onOpenBooking={() => window.open("https://wa.me/6285194345274", "_blank")} />
+      
+      <FloatingActions />
     </div>
   );
 }

@@ -12,6 +12,7 @@ export interface CategoryPricing {
   borderColor: string;
   bgGlow: string;
   startingPrice: string;
+  originalPrice?: string;
   hourlyRate: string; // e.g. "Rp12.000 / jam"
   description: string;
   features: string[];
@@ -90,19 +91,20 @@ export const PRICING_DATA: CategoryPricing[] = [
     accentColor: "#B45CE0", // XPLAY Purple
     borderColor: "border-[#B45CE0]/30",
     bgGlow: "rgba(180, 92, 224, 0.15)",
-    startingPrice: "Rp45.000",
-    hourlyRate: "45k",
+    startingPrice: "Rp35.000",
+    originalPrice: "Rp45.000",
+    hourlyRate: "35k",
     description: "Main lebih fokus dan private di ruangan khusus ber-console PlayStation 5.",
     features: ["Private Gaming Room", "Console PlayStation 5", "Sofa Empuk & Suasana Nyaman", "Floor 01 (Smoking) Setup"],
     rates: [
-      { hours: 1, price: 45000, formattedPrice: "Rp45.000" },
-      { hours: 2, price: 85000, formattedPrice: "Rp85.000" },
-      { hours: 3, price: 120000, formattedPrice: "Rp120.000" },
-      { hours: 4, price: 160000, formattedPrice: "Rp160.000" },
-      { hours: 5, price: 195000, formattedPrice: "Rp195.000" },
-      { hours: 6, price: 230000, formattedPrice: "Rp230.000" },
-      { hours: 7, price: 260000, formattedPrice: "Rp260.000" },
-      { hours: 8, price: 290000, formattedPrice: "Rp290.000" },
+      { hours: 1, price: 35000, formattedPrice: "Rp35.000" },
+      { hours: 2, price: 68000, formattedPrice: "Rp68.000" },
+      { hours: 3, price: 100000, formattedPrice: "Rp100.000" },
+      { hours: 4, price: 130000, formattedPrice: "Rp130.000" },
+      { hours: 5, price: 160000, formattedPrice: "Rp160.000" },
+      { hours: 6, price: 190000, formattedPrice: "Rp190.000" },
+      { hours: 7, price: 215000, formattedPrice: "Rp215.000" },
+      { hours: 8, price: 240000, formattedPrice: "Rp240.000" },
     ],
   },
   {
@@ -112,19 +114,20 @@ export const PRICING_DATA: CategoryPricing[] = [
     accentColor: "#F45CB4", // XPLAY Pink
     borderColor: "border-[#F45CB4]/30",
     bgGlow: "rgba(244, 92, 180, 0.15)",
-    startingPrice: "Rp50.000",
-    hourlyRate: "50k",
-    description: "Pengalaman lounge terbaik: PlayStation, Nintendo, & Netflix dalam 1 ruangan private.",
-    features: ["Ruangan Private Premium", "PlayStation Console", "Nintendo Switch Ready", "Akses Netflix TV", "Floor 02 (No Smoking)"],
+    startingPrice: "Rp40.000",
+    originalPrice: "Rp50.000",
+    hourlyRate: "40k",
+    description: "Pengalaman bermain terbaik: PlayStation 5 (4 Stik DualSense), Nintendo Switch, & TV Netflix dalam 1 ruangan private.",
+    features: ["Ruangan Private Premium", "4 Stik DualSense PS5", "Nintendo Switch Ready", "Akses Netflix TV", "Floor 02 (No Smoking)"],
     rates: [
-      { hours: 1, price: 50000, formattedPrice: "Rp50.000" },
-      { hours: 2, price: 90000, formattedPrice: "Rp90.000" },
-      { hours: 3, price: 130000, formattedPrice: "Rp130.000" },
-      { hours: 4, price: 170000, formattedPrice: "Rp170.000" },
-      { hours: 5, price: 210000, formattedPrice: "Rp210.000" },
-      { hours: 6, price: 250000, formattedPrice: "Rp250.000" },
-      { hours: 7, price: 290000, formattedPrice: "Rp290.000" },
-      { hours: 8, price: 320000, formattedPrice: "Rp320.000" },
+      { hours: 1, price: 40000, formattedPrice: "Rp40.000" },
+      { hours: 2, price: 78000, formattedPrice: "Rp78.000" },
+      { hours: 3, price: 115000, formattedPrice: "Rp115.000" },
+      { hours: 4, price: 150000, formattedPrice: "Rp150.000" },
+      { hours: 5, price: 185000, formattedPrice: "Rp185.000" },
+      { hours: 6, price: 220000, formattedPrice: "Rp220.000" },
+      { hours: 7, price: 250000, formattedPrice: "Rp250.000" },
+      { hours: 8, price: 280000, formattedPrice: "Rp280.000" },
     ],
   },
 ];
