@@ -114,6 +114,8 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                     className="w-full h-full border-0"
                     allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
                     allowFullScreen
+                    referrerPolicy="no-referrer"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"
                   />
                 </div>
 

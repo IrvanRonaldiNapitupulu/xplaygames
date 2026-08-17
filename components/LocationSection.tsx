@@ -92,6 +92,7 @@ export default function LocationSection({ onOpenBooking }: LocationSectionProps)
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               className="w-full h-full min-h-[360px] filter grayscale opacity-90 hover:grayscale-0 transition-all duration-300"
             />
           </div>
