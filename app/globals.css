@@ -31,6 +31,10 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
+  body.scroll-locked {
+    overflow: hidden;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;

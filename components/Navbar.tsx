@@ -34,12 +34,12 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
   // Prevent body scroll when mobile drawer is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("scroll-locked");
     } else {
-      document.body.style.overflow = "";
+      document.body.classList.remove("scroll-locked");
     }
     return () => {
-      document.body.style.overflow = "";
+      document.body.classList.remove("scroll-locked");
     };
   }, [isOpen]);
 
