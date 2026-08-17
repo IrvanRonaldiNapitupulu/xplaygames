@@ -38,15 +38,15 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   ];
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-[#08090B]">
+    <section id="hero" className="relative pt-24 pb-12 sm:pt-28 md:pt-36 sm:pb-16 md:pb-24 overflow-hidden bg-[#08090B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Text & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left">
 
             {/* Top Brand Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#111318] border border-[#242832] mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#111318] border border-[#242832] mb-5 sm:mb-6">
               <span className="w-2 h-2 rounded-full bg-[#1FA6F0]" />
               <span className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 uppercase">
                 PLAYSTATION GAMING SPOT
@@ -54,12 +54,12 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
-              MAIN. MABAR. <br />
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-5 sm:mb-6">
+              MAIN. MABAR. <br className="hidden sm:inline" />
               <span className="text-[#1FA6F0] relative inline-block">
                 MENANG.
                 <svg
-                  className="absolute -bottom-2 left-0 w-full h-3 text-[#1FA6F0]/40"
+                  className="absolute -bottom-1.5 left-0 w-full h-2.5 sm:h-3 text-[#1FA6F0]/40"
                   viewBox="0 0 100 20"
                   preserveAspectRatio="none"
                 >

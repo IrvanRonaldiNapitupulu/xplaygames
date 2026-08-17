@@ -64,17 +64,17 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
     onClose();
   };
 
-  const inputClass = "w-full bg-[#171717] border border-[#292929] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#1FA6F0] transition-colors font-semibold";
+  const inputClass = "w-full bg-[#171717] border border-[#292929] rounded-xl px-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-[#1FA6F0] transition-colors font-semibold";
   const labelClass = "text-xs font-mono font-bold text-zinc-400 block mb-2 uppercase tracking-wider";
 
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-start justify-center p-4"
+      className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-start justify-center p-3 sm:p-4 overflow-y-auto"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-[#111111] border border-[#292929] rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl my-8 max-h-[calc(100vh-4rem)] overflow-y-auto"
+        className="bg-[#111111] border border-[#292929] rounded-3xl p-5 sm:p-8 max-w-lg w-full relative shadow-2xl my-auto sm:my-8 max-h-[90vh] overflow-y-auto"
       >
         {/* Close */}
         <button

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { X, Download, FileText } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/business";
@@ -10,21 +11,32 @@ interface PosterModalProps {
 }
 
 export default function PosterModal({ isOpen, onClose }: PosterModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md p-4 flex items-center justify-center animate-fadeIn overflow-y-auto"
+      className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md p-3 sm:p-4 flex items-center justify-center animate-fadeIn overflow-y-auto"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-[#111111] border border-[#292929] rounded-3xl p-6 max-w-3xl w-full relative shadow-2xl my-8 flex flex-col items-center"
+        className="bg-[#111111] border border-[#292929] rounded-3xl p-4 sm:p-6 max-w-3xl w-full relative shadow-2xl my-auto sm:my-8 flex flex-col items-center max-h-[92vh] overflow-y-auto"
       >
         <div className="w-full flex items-center justify-between mb-4 pb-4 border-b border-[#292929]">
           <div className="flex items-center gap-2">
             <FileText className="w-5 h-5 text-[#FFD84D]" />
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="text-base sm:text-lg font-bold text-white">
               Official Price List XPLAY Games
             </h3>
           </div>
@@ -36,7 +48,7 @@ export default function PosterModal({ isOpen, onClose }: PosterModalProps) {
           </button>
         </div>
 
-        <div className="relative w-full h-[500px] sm:h-[600px] rounded-2xl overflow-hidden bg-[#080808] flex items-center justify-center p-2 mb-4">
+        <div className="relative w-full h-[55vh] sm:h-[600px] rounded-2xl overflow-hidden bg-[#080808] flex items-center justify-center p-2 mb-4">
           <Image
             src="/hargaxplay.jpeg"
             alt="Official Price List XPLAY Games per 16 Mei 2026"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, Search, Gamepad2, MessageCircle } from "lucide-react";
 
 interface GameListModalProps {
@@ -22,6 +22,18 @@ export default function GameListModal({
 }: GameListModalProps) {
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const filteredGames = games.filter((game) =>
@@ -29,18 +41,18 @@ export default function GameListModal({
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
       {/* Modal Card */}
       <div className="bg-[#08090B] border border-[#242832] w-full max-w-2xl rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden">
         
         {/* Header */}
-        <div className="px-6 py-5 border-b border-[#242832] flex items-center justify-between bg-[#111318]">
+        <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-[#242832] flex items-center justify-between bg-[#111318]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1FA6F0]/10 border border-[#1FA6F0]/20 flex items-center justify-center text-[#1FA6F0]">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#1FA6F0]/10 border border-[#1FA6F0]/20 flex items-center justify-center text-[#1FA6F0] shrink-0">
               <Gamepad2 className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">Daftar Game Tersedia</h3>
+              <h3 className="text-base sm:text-lg font-bold text-white">Daftar Game Tersedia</h3>
               <p className="text-xs text-zinc-400 font-mono">
                 {unitName} · <span className="text-[#1FA6F0] font-semibold">{consoleType}</span>
               </p>
@@ -57,7 +69,7 @@ export default function GameListModal({
         </div>
 
         {/* Search Bar */}
-        <div className="px-6 py-3 border-b border-[#242832] bg-[#0d0e12]">
+        <div className="px-4 sm:px-6 py-3 border-b border-[#242832] bg-[#0d0e12]">
           <div className="relative flex items-center">
             <Search className="w-4 h-4 text-zinc-500 absolute left-3.5" />
             <input
@@ -65,7 +77,7 @@ export default function GameListModal({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari judul game..."
-              className="w-full bg-[#111318] border border-[#242832] text-sm text-white placeholder-zinc-500 pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:border-[#1FA6F0] transition-colors"
+              className="w-full bg-[#111318] border border-[#242832] text-base sm:text-sm text-white placeholder-zinc-500 pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:border-[#1FA6F0] transition-colors"
             />
             {searchQuery && (
               <button

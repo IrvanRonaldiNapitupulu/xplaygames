@@ -197,10 +197,10 @@ export default function AvailabilityClient() {
           
           {/* Floor Switcher & Summary Info */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 border-b border-[#1f1f1f] pb-6">
-            <div className="flex items-center gap-2 bg-[#111111] p-1.5 rounded-2xl border border-[#292929]">
+            <div className="flex items-center gap-2 bg-[#111111] p-1.5 rounded-2xl border border-[#292929] w-full sm:w-auto overflow-x-auto no-scrollbar">
               <button
                 onClick={() => setActiveFloor(1)}
-                className={`px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap flex-1 sm:flex-initial ${
                   activeFloor === 1
                     ? "bg-[#1FA6F0] text-black shadow-lg"
                     : "text-zinc-400 hover:text-white"
@@ -211,7 +211,7 @@ export default function AvailabilityClient() {
               </button>
               <button
                 onClick={() => setActiveFloor(2)}
-                className={`px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap flex-1 sm:flex-initial ${
                   activeFloor === 2
                     ? "bg-[#1FA6F0] text-black shadow-lg"
                     : "text-zinc-400 hover:text-white"

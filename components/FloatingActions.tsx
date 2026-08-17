@@ -53,10 +53,10 @@ export default function FloatingActions({ onOpenBooking }: FloatingActionsProps)
         </button>
       )}
 
-      {/* WhatsApp Bulat Floating Button */}
+      {/* WhatsApp Bulat Floating Button - Visible ONLY on Desktop/Tablet (hidden on mobile) */}
       <button
         onClick={handleWhatsAppClick}
-        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-2xl flex items-center justify-center transition-all duration-200 hover:scale-105 relative group"
+        className="hidden sm:flex w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-2xl items-center justify-center transition-all duration-200 hover:scale-105 relative group"
         aria-label="Chat WhatsApp"
         title="Chat WhatsApp"
       >

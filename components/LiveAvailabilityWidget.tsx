@@ -78,13 +78,13 @@ export default function LiveAvailabilityWidget() {
   const totalQueue = data?.stations?.reduce((acc, s) => acc + (s.queueCount || 0), 0) || 0;
 
   return (
-    <section className="py-8 bg-[#08090B] border-y border-[#242832] relative">
+    <section className="py-6 sm:py-8 bg-[#08090B] border-y border-[#242832] relative">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-[#111111]/80 rounded-2xl border border-[#292929] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#111111]/80 rounded-2xl border border-[#292929] p-4 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 sm:gap-6">
           
-          <div className="flex items-center gap-4 flex-1">
-            <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all ${
+          <div className="flex items-start sm:items-center gap-3.5 sm:gap-4 flex-1">
+            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center border transition-all shrink-0 ${
               !isOpenNow
                 ? "bg-[#FF3038]/10 border-[#FF3038]/30 text-[#FF3038]"
                 : loading 

@@ -31,6 +31,18 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   // Homepage scroll section observer
   useEffect(() => {
     if (pathname !== "/") {
@@ -215,8 +227,8 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       {/* Mobile Drawer Menu */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[72px] bg-[#08090B]/98 backdrop-blur-xl border-b border-[#242832] px-5 py-6 shadow-2xl transition-all animate-fadeIn">
-          <div className="flex flex-col gap-3">
+        <div className="lg:hidden fixed inset-x-0 top-[72px] bg-[#08090B]/98 backdrop-blur-xl border-b border-[#242832] px-5 py-5 shadow-2xl transition-all max-h-[calc(100vh-72px)] overflow-y-auto">
+          <div className="flex flex-col gap-3 pb-4">
 
             {/* Mobile Open Status line */}
             <div className="flex items-center gap-2 text-xs text-zinc-400 pb-3 border-b border-[#242832]">
@@ -240,7 +252,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="my-1.5 px-4 py-2.5 rounded-xl bg-[#FF3038] animate-pulse text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md shadow-[#FF3038]/30 whitespace-nowrap"
+                      className="my-1 px-4 py-3 rounded-xl bg-[#FF3038] animate-pulse text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md shadow-[#FF3038]/30 whitespace-nowrap active:scale-[0.99] transition-transform"
                     >
                       <span className="w-2 h-2 rounded-full bg-white animate-ping shrink-0" />
                       <span>Live Billing</span>
@@ -253,10 +265,10 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-sm py-2.5 transition-colors whitespace-nowrap flex items-center gap-2 ${
+                    className={`text-sm py-3 px-3 rounded-xl transition-colors whitespace-nowrap flex items-center gap-2 ${
                       active
-                        ? "text-[#1FA6F0] font-semibold border-l-2 border-[#1FA6F0] pl-3"
-                        : "text-zinc-400 hover:text-zinc-100 pl-3"
+                        ? "text-[#1FA6F0] font-semibold bg-[#1FA6F0]/10 border-l-2 border-[#1FA6F0]"
+                        : "text-zinc-300 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     <span>{link.name}</span>
@@ -272,9 +284,9 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                   setIsOpen(false);
                   onOpenBooking();
                 }}
-                className="w-full h-11 rounded-xl bg-[#1FA6F0] text-black font-bold text-sm text-center flex items-center justify-center gap-2 transition-opacity hover:opacity-90"
+                className="w-full h-12 rounded-xl bg-[#1FA6F0] text-black font-extrabold text-sm text-center flex items-center justify-center gap-2 transition-opacity hover:opacity-90 active:scale-[0.99]"
               >
-                <MessageCircle className="w-4 h-4 fill-black/20" />
+                <MessageCircle className="w-4.5 h-4.5 fill-black/20" />
                 <span>BOOKING SEKARANG</span>
               </button>
             </div>

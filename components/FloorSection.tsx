@@ -94,10 +94,10 @@ export default function FloorSection({ onOpenBooking }: FloorSectionProps) {
                   </div>
 
                   {/* Floor CTA */}
-                  <div className="flex items-center gap-4 flex-wrap">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                     <button
                       onClick={() => onOpenBooking(`Floor ${floor.floorNumber} (${floor.environmentTag})`)}
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#111318] hover:bg-[#171920] border border-[#242832] text-white font-bold py-3 px-5 text-sm transition-colors"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[#111318] hover:bg-[#171920] border border-[#242832] text-white font-bold py-3.5 px-5 text-sm transition-colors"
                     >
                       <MessageCircle className="w-4 h-4 text-[#1FA6F0]" />
                       <span>Book Lantai {floor.floorNumber}</span>
@@ -105,7 +105,7 @@ export default function FloorSection({ onOpenBooking }: FloorSectionProps) {
 
                     <Link
                       href="/availability"
-                      className="text-xs font-semibold text-[#1FA6F0] hover:underline inline-flex items-center gap-1"
+                      className="text-xs font-semibold text-[#1FA6F0] hover:underline inline-flex items-center justify-center gap-1 py-1"
                     >
                       <span>Lihat Game per Unit</span>
                       <span>→</span>
