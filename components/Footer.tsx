@@ -123,13 +123,6 @@ export default function Footer({ onOpenBooking }: FooterProps) {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-          <p>© {new Date().getFullYear()} XPLAY GAMES. All rights reserved.</p>
-          <p className="font-mono text-[11px]">
-            Designed for Modern Gaming Experience
-          </p>
-        </div>
       </div>
     </footer>
   );
