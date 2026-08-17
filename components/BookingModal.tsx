@@ -21,12 +21,25 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
   const [jumlahJam, setJumlahJam] = useState<string>("2");
 
   useEffect(() => {
-    if (initialConsole && consoleOptions.includes(initialConsole)) {
-      setTipe(initialConsole);
-    } else if (initialConsole?.toLowerCase().includes("vvip")) {
-      setTipe("VVIP Room");
-    } else if (initialConsole?.toLowerCase().includes("vip")) {
-      setTipe("VIP Room");
+    // Defensive normalization: ensure initialConsole is string
+    const normalizedConsole = typeof initialConsole === "string" ? initialConsole.trim() : "";
+    if (!normalizedConsole) return;
+
+    if (consoleOptions.includes(normalizedConsole)) {
+      setTipe(normalizedConsole);
+    } else {
+      const lower = normalizedConsole.toLowerCase();
+      if (lower.includes("vvip")) {
+        setTipe("VVIP Room");
+      } else if (lower.includes("vip")) {
+        setTipe("VIP Room");
+      } else if (lower.includes("ps4+") || lower.includes("ps4 pro")) {
+        setTipe("PS4+");
+      } else if (lower.includes("ps4")) {
+        setTipe("PS4");
+      } else if (lower.includes("ps5")) {
+        setTipe("PS5");
+      }
     }
   }, [initialConsole]);
 

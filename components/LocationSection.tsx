@@ -72,7 +72,7 @@ export default function LocationSection({ onOpenBooking }: LocationSectionProps)
               </a>
 
               <button
-                onClick={onOpenBooking}
+                onClick={() => onOpenBooking()}
                 className="w-full rounded-xl bg-[#111318] hover:bg-[#171920] border border-[#242832] text-white font-bold py-3 px-4 text-sm flex items-center justify-center gap-2 transition-colors"
               >
                 <MessageCircle className="w-4 h-4 text-[#1FA6F0]" />

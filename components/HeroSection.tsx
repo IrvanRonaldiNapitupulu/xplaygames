@@ -77,7 +77,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-12">
               <button
-                onClick={onOpenBooking}
+                onClick={() => onOpenBooking()}
                 className="w-full sm:w-auto rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-extrabold px-8 py-4 text-base transition-opacity flex items-center justify-center gap-3"
               >
                 <MessageCircle className="w-5 h-5 fill-black/20" />

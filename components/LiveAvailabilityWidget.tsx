@@ -132,7 +132,7 @@ export default function LiveAvailabilityWidget() {
                 <div className="flex items-center gap-2">
                   <AlertTriangle className="w-4 h-4 text-[#FF3038]" />
                   <h3 className="text-sm sm:text-base font-bold text-zinc-300">
-                    Live status temporarily unavailable
+                    Status billing sedang tidak tersedia
                   </h3>
                 </div>
               ) : (

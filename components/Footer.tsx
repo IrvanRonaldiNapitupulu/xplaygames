@@ -46,7 +46,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
             </p>
 
             <button
-              onClick={onOpenBooking}
+              onClick={() => onOpenBooking()}
               className="px-5 py-2.5 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-[#1FA6F0] font-bold text-xs flex items-center gap-2 transition-colors"
             >
               <MessageCircle className="w-4 h-4" />

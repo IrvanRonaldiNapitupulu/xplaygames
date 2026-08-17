@@ -26,7 +26,8 @@ export default function Home() {
   const [isPosterOpen, setIsPosterOpen] = useState(false);
 
   const handleOpenBooking = (consoleName?: string) => {
-    setBookingConsole(consoleName);
+    const safeConsole = typeof consoleName === "string" ? consoleName : undefined;
+    setBookingConsole(safeConsole);
     setIsBookingOpen(true);
   };
 

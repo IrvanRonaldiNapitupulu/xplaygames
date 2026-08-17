@@ -64,7 +64,7 @@ export default function HowToBookSection({ onOpenBooking }: HowToBookSectionProp
         {/* Action Button */}
         <div>
           <button
-            onClick={onOpenBooking}
+            onClick={() => onOpenBooking()}
             className="rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-extrabold px-6 py-3.5 text-sm inline-flex items-center gap-2 transition-opacity"
           >
             <MessageCircle className="w-4 h-4 fill-black/20" />
