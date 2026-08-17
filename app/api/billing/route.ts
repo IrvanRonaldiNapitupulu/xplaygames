@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 // Simple in-memory cache to throttle upstream requests
 let cachedData: any = null;
 let cacheTime = 0;
-const CACHE_DURATION_MS = 15000; // 15 seconds
+const CACHE_DURATION_MS = 30000; // 30 seconds
 
 interface RawStation {
   idStation: number;
@@ -116,7 +116,8 @@ export async function GET() {
 
     return NextResponse.json({ ...result, fromCache: false });
   } catch (error: any) {
-    console.error("Error fetching live billing data:", error);
+    // Only warn (not error) — 530 means upstream is temporarily down, expected during off-hours
+    console.warn("[billing] Upstream unavailable:", error.message);
 
     // If we have stale cache, return it with a warning flag
     if (cachedData) {

@@ -81,19 +81,55 @@ export default function LocationSection({ onOpenBooking }: LocationSectionProps)
             </div>
           </div>
 
-          {/* Right Map Embed Panel */}
-          <div className="lg:col-span-7 rounded-xl overflow-hidden bg-[#111318] border border-[#242832] min-h-[360px]">
-            <iframe
-              title="XPlay Games Google Maps Location"
-              src="https://maps.google.com/maps?q=XPlay%20Games&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: "360px" }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full min-h-[360px] filter grayscale opacity-90 hover:grayscale-0 transition-all duration-300"
-            />
+          {/* Right: Static Map Card — no cross-origin iframe, no SecurityError */}
+          <div className="lg:col-span-7 rounded-xl overflow-hidden bg-[#111318] border border-[#242832] min-h-[360px] flex flex-col">
+            {/* Map visual placeholder */}
+            <div className="flex-1 relative bg-[#0d0e12] flex items-center justify-center p-8 min-h-[240px]">
+              {/* Grid lines for map feel */}
+              <div className="absolute inset-0 opacity-10"
+                style={{
+                  backgroundImage: "linear-gradient(#1FA6F0 1px, transparent 1px), linear-gradient(90deg, #1FA6F0 1px, transparent 1px)",
+                  backgroundSize: "40px 40px"
+                }}
+              />
+              {/* Map pin */}
+              <div className="relative flex flex-col items-center gap-3 z-10">
+                <div className="w-16 h-16 rounded-full bg-[#1FA6F0]/20 border-2 border-[#1FA6F0]/40 flex items-center justify-center shadow-lg shadow-[#1FA6F0]/20">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-[#1FA6F0]" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" strokeLinejoin="round"/>
+                    <circle cx="12" cy="9" r="2.5" fill="currentColor" strokeWidth="0"/>
+                  </svg>
+                </div>
+                <div className="text-center">
+                  <p className="text-white font-bold text-sm">XPLAY GAMES</p>
+                  <p className="text-zinc-400 text-xs mt-0.5">Batam, Kepulauan Riau</p>
+                </div>
+                {/* Concentric rings */}
+                <div className="absolute w-32 h-32 rounded-full border border-[#1FA6F0]/20 animate-ping" style={{ animationDuration: "3s" }} />
+                <div className="absolute w-48 h-48 rounded-full border border-[#1FA6F0]/10" />
+              </div>
+            </div>
+            {/* Open Maps CTA */}
+            <a
+              href={BUSINESS_INFO.googleMapsDirectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between px-5 py-4 border-t border-[#242832] bg-[#111318] hover:bg-[#171920] transition-colors group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#1FA6F0]/10 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 text-[#1FA6F0]" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white">Buka di Google Maps</p>
+                  <p className="text-xs text-zinc-400">Dapatkan petunjuk arah ke XPLAY Games</p>
+                </div>
+              </div>
+              <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-[#1FA6F0] transition-colors" />
+            </a>
           </div>
 
         </div>
