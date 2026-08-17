@@ -130,7 +130,7 @@ export async function GET() {
     }
 
     return NextResponse.json(
-      { error: "Live status temporarily unavailable", details: error.message },
+      { error: "Billing server offline", details: error.message },
       { status: 502 }
     );
   }

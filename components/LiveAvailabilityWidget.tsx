@@ -41,14 +41,15 @@ export default function LiveAvailabilityWidget() {
     setError(false);
     try {
       const res = await fetch("/api/billing");
-      if (!res.ok) throw new Error("Failed to load billing API");
+      if (!res.ok) throw new Error(`Billing server status ${res.status}`);
       const json = await res.json();
       if (!isMounted.current) return;
       setData(json);
       setSecondsAgo(0);
-    } catch (err) {
-      console.error(err);
+    } catch (err: any) {
       if (!isMounted.current) return;
+      console.warn("Billing server unavailable:", err?.message || err);
+      setData(null);
       setError(true);
     } finally {
       if (isMounted.current) setLoading(false);
@@ -94,7 +95,7 @@ export default function LiveAvailabilityWidget() {
                 : loading 
                   ? "bg-zinc-800/40 border-zinc-700 text-zinc-500 animate-pulse" 
                   : error 
-                    ? "bg-[#FF3038]/10 border-[#FF3038]/30 text-[#FF3038]" 
+                    ? "bg-zinc-800/40 border-zinc-700 text-zinc-400" 
                     : "bg-[#1FA6F0]/10 border-[#1FA6F0]/20 text-[#1FA6F0]"
             }`}>
               <Gamepad2 className={`w-6 h-6 ${loading && isOpenNow ? "animate-spin" : ""}`} />
@@ -129,11 +130,14 @@ export default function LiveAvailabilityWidget() {
                   <span>Live status sedang diperbarui...</span>
                 </h3>
               ) : error ? (
-                <div className="flex items-center gap-2">
-                  <AlertTriangle className="w-4 h-4 text-[#FF3038]" />
-                  <h3 className="text-sm sm:text-base font-bold text-zinc-300">
-                    Status billing sedang tidak tersedia
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-sm sm:text-base font-bold text-zinc-300 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-zinc-500" />
+                    <span>Status realtime sedang offline</span>
                   </h3>
+                  <p className="text-xs text-zinc-400">
+                    Server billing aktif saat jam operasional ({BUSINESS_INFO.operatingHoursText}). Anda tetap dapat memesan unit via WhatsApp.
+                  </p>
                 </div>
               ) : (
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">

@@ -82,14 +82,15 @@ export default function AvailabilityClient() {
     setError(false);
     try {
       const res = await fetch("/api/billing");
-      if (!res.ok) throw new Error("Failed to load live status data");
+      if (!res.ok) throw new Error(`Billing server status ${res.status}`);
       const json = await res.json();
       if (!isMounted.current) return;
       setData(json);
       setSecondsAgo(0);
-    } catch (err) {
-      console.error(err);
+    } catch (err: any) {
       if (!isMounted.current) return;
+      console.warn("Billing server unavailable:", err?.message || err);
+      setData(null);
       setError(true);
     } finally {
       if (isMounted.current) setLoading(false);
@@ -257,18 +258,18 @@ export default function AvailabilityClient() {
 
           {error && !data && (
             <div className="py-16 text-center max-w-md mx-auto">
-              <div className="w-16 h-16 rounded-full bg-[#FF3038]/10 border border-[#FF3038]/30 flex items-center justify-center text-[#FF3038] mx-auto mb-6">
-                <AlertTriangle className="w-8 h-8" />
+              <div className="w-14 h-14 rounded-full bg-[#111318] border border-[#242832] flex items-center justify-center text-zinc-400 mx-auto mb-5">
+                <Clock className="w-7 h-7 text-[#1FA6F0]" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Live status temporarily unavailable</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Status Realtime Sedang Offline</h3>
               <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
-                Sistem tidak dapat memuat informasi ketersediaan unit. Harap periksa koneksi internet Anda atau coba muat ulang halaman.
+                Server billing aktif pada jam operasional ({BUSINESS_INFO.operatingHoursText}). Anda tetap dapat mengecek unit & memesan langsung via WhatsApp.
               </p>
               <button
                 onClick={fetchStatus}
-                className="px-6 py-3 rounded-xl bg-[#1FA6F0] hover:bg-[#2b96c7] text-black font-extrabold text-sm transition-all"
+                className="px-6 py-3 rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-extrabold text-xs tracking-wider uppercase transition-all"
               >
-                Coba lagi
+                Cek Kembali Status
               </button>
             </div>
           )}
