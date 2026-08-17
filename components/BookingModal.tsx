@@ -64,7 +64,7 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
     onClose();
   };
 
-  const inputClass = "w-full bg-[#171717] border border-[#292929] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#36B7F0] transition-colors font-semibold";
+  const inputClass = "w-full bg-[#171717] border border-[#292929] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#1FA6F0] transition-colors font-semibold";
   const labelClass = "text-xs font-mono font-bold text-zinc-400 block mb-2 uppercase tracking-wider";
 
   return (
@@ -86,7 +86,7 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
 
         {/* Header */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 rounded-2xl bg-[#36B7F0]/10 border border-[#36B7F0]/30 text-[#36B7F0]">
+          <div className="p-3 rounded-2xl bg-[#1FA6F0]/10 border border-[#1FA6F0]/30 text-[#1FA6F0]">
             <Gamepad2 className="w-6 h-6" />
           </div>
           <div>
@@ -101,7 +101,7 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
           {/* A. Tipe */}
           <div>
             <label className={labelClass}>
-              <span className="text-[#36B7F0] mr-1">A.</span> TIPE CONSOLE / ROOM
+              <span className="text-[#1FA6F0] mr-1">A.</span> TIPE CONSOLE / ROOM
             </label>
             <div className="flex flex-wrap gap-2">
               {consoleOptions.map((opt) => (
@@ -111,7 +111,7 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
                   onClick={() => setTipe(opt)}
                   className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
                     tipe === opt
-                      ? "bg-[#36B7F0] text-black shadow-md scale-105"
+                      ? "bg-[#1FA6F0] text-black shadow-md scale-105"
                       : "bg-[#171717] text-zinc-400 border border-[#292929] hover:text-white"
                   }`}
                 >
@@ -130,7 +130,7 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
               type="date"
               value={tanggal}
               onChange={(e) => setTanggal(e.target.value)}
-              className={inputClass.replace("focus:border-[#36B7F0]", "focus:border-[#75D84B]")}
+              className={inputClass.replace("focus:border-[#1FA6F0]", "focus:border-[#75D84B]")}
               required
             />
           </div>
@@ -144,7 +144,7 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
               type="time"
               value={jamMulai}
               onChange={(e) => setJamMulai(e.target.value)}
-              className={inputClass.replace("focus:border-[#36B7F0]", "focus:border-[#FFD84D]")}
+              className={inputClass.replace("focus:border-[#1FA6F0]", "focus:border-[#FFD84D]")}
               required
             />
           </div>
@@ -159,7 +159,7 @@ export default function BookingModal({ isOpen, onClose, initialConsole }: Bookin
               value={nama}
               onChange={(e) => setNama(e.target.value)}
               placeholder="Masukkan nama kamu..."
-              className={inputClass.replace("focus:border-[#36B7F0]", "focus:border-[#F45CB4]") + " placeholder:text-zinc-600"}
+              className={inputClass.replace("focus:border-[#1FA6F0]", "focus:border-[#F45CB4]") + " placeholder:text-zinc-600"}
               required
             />
           </div>
@@ -219,7 +219,7 @@ Jangan lakukan pembayaran sebelum ada konfirmasi`}
         <button
           onClick={handleSendWhatsApp}
           disabled={!tanggal || !nama}
-          className="w-full mt-5 rounded-2xl bg-[#36B7F0] disabled:bg-zinc-700 disabled:cursor-not-allowed text-black disabled:text-zinc-500 font-extrabold py-4 px-6 text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-lg shadow-[#36B7F0]/25 transition-transform hover:scale-105 active:scale-95"
+          className="w-full mt-5 rounded-2xl bg-[#1FA6F0] disabled:bg-zinc-700 disabled:cursor-not-allowed text-black disabled:text-zinc-500 font-extrabold py-4 px-6 text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-lg shadow-[#1FA6F0]/25 transition-transform hover:scale-105 active:scale-95"
         >
           <MessageCircle className="w-5 h-5 fill-black/20" />
           <span>KIRIM BOOKING VIA WHATSAPP</span>

@@ -34,7 +34,7 @@ export default function FacilitiesSection() {
               <div className="space-y-4">
                 {cat.items.map((item, itemIdx) => (
                   <div key={itemIdx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-[#22C7F2] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1FA6F0] shrink-0 mt-0.5" />
                     <div>
                       <h4 className="text-sm font-semibold text-zinc-200">
                         {item.name}

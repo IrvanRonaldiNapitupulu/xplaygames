@@ -100,7 +100,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           {/* Brand Logo & Compact Status */}
           <div className="flex items-center gap-4 shrink-0">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full p-0.5 bg-[#242832] transition-colors group-hover:border-[#22C7F2] border border-transparent">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full p-0.5 bg-[#242832] transition-colors group-hover:border-[#1FA6F0] border border-transparent">
                 <div className="w-full h-full bg-[#08090B] rounded-full flex items-center justify-center overflow-hidden">
                   <Image
                     src="/xplay.png"
@@ -113,8 +113,8 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-base sm:text-lg tracking-wider text-white group-hover:text-[#22C7F2] transition-colors">
-                  XPLAY <span className="text-[#22C7F2]">GAMES</span>
+                <span className="font-extrabold text-base sm:text-lg tracking-wider text-white group-hover:text-[#1FA6F0] transition-colors">
+                  XPLAY <span className="text-[#1FA6F0]">GAMES</span>
                 </span>
                 <span className="text-[10px] text-zinc-400 tracking-widest uppercase -mt-0.5 hidden sm:block font-mono">
                   Play The Game
@@ -162,13 +162,13 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                   href={link.href}
                   className={`relative py-1 text-xs xl:text-sm font-medium transition-colors duration-150 whitespace-nowrap flex items-center gap-1.5 ${
                     active
-                      ? "text-[#22C7F2]"
+                      ? "text-[#1FA6F0]"
                       : "text-zinc-400 hover:text-zinc-100"
                   }`}
                 >
                   <span>{link.name}</span>
                   {active && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#22C7F2] shadow-[0_1px_6px_rgba(34,199,242,0.5)] rounded-full" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1FA6F0] shadow-[0_1px_6px_rgba(31,166,240,0.5)] rounded-full" />
                   )}
                 </Link>
               );
@@ -179,7 +179,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <button
               onClick={() => onOpenBooking()}
-              className="h-10 rounded-xl bg-[#22C7F2] hover:opacity-90 text-black font-bold px-4 sm:px-5 text-xs sm:text-sm transition-opacity flex items-center justify-center gap-2 whitespace-nowrap shadow-md shadow-[#22C7F2]/10"
+              className="h-10 rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-bold px-4 sm:px-5 text-xs sm:text-sm transition-opacity flex items-center justify-center gap-2 whitespace-nowrap shadow-md shadow-[#1FA6F0]/10"
             >
               <MessageCircle className="w-4 h-4 text-black fill-black/20" />
               <span>BOOKING SEKARANG</span>
@@ -206,7 +206,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               className="p-2 rounded-xl bg-[#111318] border border-[#242832] text-zinc-300 hover:text-white transition-colors"
               aria-label="Toggle Menu"
             >
-              {isOpen ? <X className="w-5 h-5 text-[#22C7F2]" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-5 h-5 text-[#1FA6F0]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
@@ -255,7 +255,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                     onClick={() => setIsOpen(false)}
                     className={`text-sm py-2.5 transition-colors whitespace-nowrap flex items-center gap-2 ${
                       active
-                        ? "text-[#22C7F2] font-semibold border-l-2 border-[#22C7F2] pl-3"
+                        ? "text-[#1FA6F0] font-semibold border-l-2 border-[#1FA6F0] pl-3"
                         : "text-zinc-400 hover:text-zinc-100 pl-3"
                     }`}
                   >
@@ -272,7 +272,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                   setIsOpen(false);
                   onOpenBooking();
                 }}
-                className="w-full h-11 rounded-xl bg-[#22C7F2] text-black font-bold text-sm text-center flex items-center justify-center gap-2 transition-opacity hover:opacity-90"
+                className="w-full h-11 rounded-xl bg-[#1FA6F0] text-black font-bold text-sm text-center flex items-center justify-center gap-2 transition-opacity hover:opacity-90"
               >
                 <MessageCircle className="w-4 h-4 fill-black/20" />
                 <span>BOOKING SEKARANG</span>

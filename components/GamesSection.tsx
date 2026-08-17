@@ -21,7 +21,7 @@ export default function GamesSection() {
 
           <Link
             href="/availability"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#111318] hover:bg-[#1a1d24] border border-[#242832] text-xs font-bold text-[#22C7F2] transition-colors shrink-0"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#111318] hover:bg-[#1a1d24] border border-[#242832] text-xs font-bold text-[#1FA6F0] transition-colors shrink-0"
           >
             <span>Cek Game Per Unit (Live)</span>
             <span>→</span>
@@ -32,7 +32,7 @@ export default function GamesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {GAME_CATEGORIES.map((cat: GameCategory) => (
             <div key={cat.id} className="border-b border-[#1f1f1f] pb-6 last:border-b-0">
-              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#22C7F2] mb-2">
+              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#1FA6F0] mb-2">
                 {cat.name}
               </h3>
               <p className="text-xs text-zinc-400 mb-4 leading-relaxed">

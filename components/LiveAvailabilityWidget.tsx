@@ -91,14 +91,14 @@ export default function LiveAvailabilityWidget() {
                   ? "bg-zinc-800/40 border-zinc-700 text-zinc-500 animate-pulse" 
                   : error 
                     ? "bg-[#FF3038]/10 border-[#FF3038]/30 text-[#FF3038]" 
-                    : "bg-[#36B7F0]/10 border-[#36B7F0]/20 text-[#36B7F0]"
+                    : "bg-[#1FA6F0]/10 border-[#1FA6F0]/20 text-[#1FA6F0]"
             }`}>
               <Gamepad2 className={`w-6 h-6 ${loading && isOpenNow ? "animate-spin" : ""}`} />
             </div>
 
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-mono tracking-widest text-[#36B7F0] font-bold uppercase">
+                <span className="text-xs font-mono tracking-widest text-[#1FA6F0] font-bold uppercase">
                   XPLAY LIVE STATUS
                 </span>
                 {data && isOpenNow && (

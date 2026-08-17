@@ -23,9 +23,9 @@ export const PRICING_DATA: CategoryPricing[] = [
   {
     id: "ps4",
     name: "PS4",
-    accentColor: "#36B7F0", // XPLAY Blue
-    borderColor: "border-[#36B7F0]/30",
-    bgGlow: "rgba(54, 183, 240, 0.15)",
+    accentColor: "#1FA6F0", // XPLAY Blue
+    borderColor: "border-[#1FA6F0]/30",
+    bgGlow: "rgba(31, 166, 240, 0.15)",
     startingPrice: "Rp12.000",
     hourlyRate: "12k",
     description: "Cocok untuk gaming kasual dan mabar seru bareng teman.",

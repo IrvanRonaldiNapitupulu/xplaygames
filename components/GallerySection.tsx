@@ -42,7 +42,7 @@ export default function GallerySection({ onOpenPosterModal }: GallerySectionProp
               onClick={() => setActiveFilter(f)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors ${
                 activeFilter === f
-                  ? "bg-[#22C7F2] text-black"
+                  ? "bg-[#1FA6F0] text-black"
                   : "bg-[#111318] text-zinc-400 border border-[#242832] hover:text-white"
               }`}
             >
@@ -77,7 +77,7 @@ export default function GallerySection({ onOpenPosterModal }: GallerySectionProp
                 />
                 
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="p-2.5 rounded-lg bg-[#22C7F2] text-black font-bold flex items-center gap-1.5 text-xs">
+                  <span className="p-2.5 rounded-lg bg-[#1FA6F0] text-black font-bold flex items-center gap-1.5 text-xs">
                     <ZoomIn className="w-4 h-4" />
                     <span>Perbesar</span>
                   </span>
@@ -86,7 +86,7 @@ export default function GallerySection({ onOpenPosterModal }: GallerySectionProp
 
               {/* Minimal Text Below Photo */}
               <div className="mt-3">
-                <h3 className="text-sm font-bold text-white group-hover:text-[#22C7F2] transition-colors">
+                <h3 className="text-sm font-bold text-white group-hover:text-[#1FA6F0] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-xs text-zinc-400 mt-0.5">

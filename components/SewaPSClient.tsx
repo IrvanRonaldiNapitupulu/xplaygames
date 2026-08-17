@@ -68,7 +68,7 @@ export default function SewaPSClient() {
       id: "ps4",
       name: "PlayStation 4 Slim/Fat",
       badge: "VALUE CHOICE",
-      accent: "#36B7F0",
+      accent: "#1FA6F0",
       image: "/sewanontv.jpeg",
       pricing: [
         { label: "1 Hari", price: "Rp150.000", raw: 150000 },
@@ -152,7 +152,7 @@ export default function SewaPSClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#36B7F0] selection:text-black">
+    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#1FA6F0] selection:text-black">
       <Navbar onOpenBooking={() => setIsBookingOpen(true)} />
 
       <main className="flex-1 pt-24 pb-16">
@@ -171,7 +171,7 @@ export default function SewaPSClient() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="max-w-2xl flex flex-col items-start">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#36B7F0]/10 border border-[#36B7F0]/20 text-[#36B7F0] text-xs font-mono font-bold uppercase mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1FA6F0]/10 border border-[#1FA6F0]/20 text-[#1FA6F0] text-xs font-mono font-bold uppercase mb-6">
                 <Gamepad2 className="w-3.5 h-3.5" />
                 <span>LAYANAN SEWA PS BAWA PULANG</span>
               </div>
@@ -187,7 +187,7 @@ export default function SewaPSClient() {
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <a
                   href="#booking-calculator"
-                  className="rounded-xl bg-[#22C7F2] text-black font-extrabold px-8 py-4 text-center transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
+                  className="rounded-xl bg-[#1FA6F0] text-black font-extrabold px-8 py-4 text-center transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5 fill-black/20" />
                   <span>BOOKING SEWA PS</span>
@@ -210,7 +210,7 @@ export default function SewaPSClient() {
             <div className="flex items-center gap-2.5">
               <Info className="w-5 h-5 text-[#FFD84D] shrink-0" />
               <p className="text-xs sm:text-sm text-zinc-300">
-                Layanan sewa bawa pulang **tidak termasuk TV**. Untuk paket lengkap dengan TV, lihat layanan <Link href="/playbox" className="text-[#36B7F0] hover:underline font-bold">Playbox</Link>.
+                Layanan sewa bawa pulang **tidak termasuk TV**. Untuk paket lengkap dengan TV, lihat layanan <Link href="/playbox" className="text-[#1FA6F0] hover:underline font-bold">Playbox</Link>.
               </p>
             </div>
             <span className="text-[10px] font-mono text-zinc-500 tracking-wider uppercase">
@@ -242,7 +242,7 @@ export default function SewaPSClient() {
                     <span className="text-xs text-zinc-500 font-mono">Jaminan: {c.deposit}</span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-[#36B7F0] transition-colors">{c.name}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-[#1FA6F0] transition-colors">{c.name}</h3>
 
                   <div className="space-y-3 mb-8">
                     {c.pricing.map((p, idx) => (
@@ -272,7 +272,7 @@ export default function SewaPSClient() {
                       const target = document.getElementById("booking-calculator");
                       if (target) target.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="w-full py-3 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-white hover:text-[#36B7F0] font-bold text-sm transition-all duration-200"
+                    className="w-full py-3 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-white hover:text-[#1FA6F0] font-bold text-sm transition-all duration-200"
                   >
                     Booking Console Ini
                   </button>
@@ -309,7 +309,7 @@ export default function SewaPSClient() {
                   "Pilihan Game Digital siap main"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 bg-[#111111] border border-[#292929] p-4 rounded-2xl">
-                    <CheckCircle2 className="w-5 h-5 text-[#36B7F0] shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-[#1FA6F0] shrink-0" />
                     <span className="text-sm font-semibold text-zinc-200">{item}</span>
                   </div>
                 ))}
@@ -329,7 +329,7 @@ export default function SewaPSClient() {
                   <span className="block text-base font-bold text-white">Stick PS4 Tambahan</span>
                   <span className="text-xs text-zinc-400">Cocok untuk mabar 3-4 orang</span>
                 </div>
-                <span className="text-lg font-black text-[#36B7F0]">Rp20.000 <span className="text-xs font-normal text-zinc-400">/ hari</span></span>
+                <span className="text-lg font-black text-[#1FA6F0]">Rp20.000 <span className="text-xs font-normal text-zinc-400">/ hari</span></span>
               </div>
               <div className="flex items-center justify-between p-4 rounded-2xl bg-[#171717] border border-[#292929]">
                 <div>
@@ -379,7 +379,7 @@ export default function SewaPSClient() {
                 <div className="p-6 border-t border-[#292929] text-sm text-zinc-300 space-y-4 leading-relaxed bg-[#0e0e0e]">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <span className="block font-bold text-white uppercase text-xs tracking-wider text-[#36B7F0]">PERSYARATAN DOKUMEN:</span>
+                      <span className="block font-bold text-white uppercase text-xs tracking-wider text-[#1FA6F0]">PERSYARATAN DOKUMEN:</span>
                       <ul className="list-disc pl-5 space-y-1.5">
                         <li>Wajib bersedia **difoto** bersama unit saat penyerahan.</li>
                         <li>Wajib meninggalkan **jaminan eKTP asli** penyewa selama masa sewa.</li>
@@ -481,7 +481,7 @@ export default function SewaPSClient() {
         {/* Product Comparison Section */}
         <section className="mb-20">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-mono text-[#36B7F0] uppercase font-bold tracking-widest block mb-2">COMPARE & DECIDE</span>
+            <span className="text-xs font-mono text-[#1FA6F0] uppercase font-bold tracking-widest block mb-2">COMPARE & DECIDE</span>
             <h2 className="text-3xl font-black text-white">BANDINGKAN PILIHAN BERMAIN</h2>
           </div>
 
@@ -490,7 +490,7 @@ export default function SewaPSClient() {
               <thead>
                 <tr className="bg-[#111111] border-b border-[#292929]">
                   <th className="p-4 font-mono text-xs text-zinc-400 uppercase">FITUR / LAYANAN</th>
-                  <th className="p-4 font-mono text-xs text-[#36B7F0] uppercase">MAIN DI LOKASI XPLAY</th>
+                  <th className="p-4 font-mono text-xs text-[#1FA6F0] uppercase">MAIN DI LOKASI XPLAY</th>
                   <th className="p-4 font-mono text-xs text-[#75D84B] uppercase">SEWA PS (BAWA PULANG)</th>
                   <th className="p-4 font-mono text-xs text-[#F45CB4] uppercase">PLAYBOX (PAKET + TV)</th>
                 </tr>
@@ -534,7 +534,7 @@ export default function SewaPSClient() {
                 </tr>
                 <tr className="bg-[#111111]/30">
                   <td className="p-4 font-semibold text-zinc-300">Rekomendasi Untuk</td>
-                  <td className="p-4 text-[#36B7F0] font-medium text-xs">Mabar seru & nongkrong di tempat</td>
+                  <td className="p-4 text-[#1FA6F0] font-medium text-xs">Mabar seru & nongkrong di tempat</td>
                   <td className="p-4 text-[#75D84B] font-medium text-xs">Gaming santai di rumah sendiri</td>
                   <td className="p-4 text-[#F45CB4] font-medium text-xs">Mabar lengkap di rumah tanpa TV sendiri</td>
                 </tr>
@@ -559,22 +559,22 @@ export default function SewaPSClient() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">Nama</label>
-                  <input type="text" value={nama} onChange={(e) => setNama(e.target.value)} placeholder="Nama lengkap..." required className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold placeholder:text-zinc-600" />
+                  <input type="text" value={nama} onChange={(e) => setNama(e.target.value)} placeholder="Nama lengkap..." required className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold placeholder:text-zinc-600" />
                 </div>
                 <div className="sm:col-span-2">
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">Alamat Rumah</label>
-                  <input type="text" value={alamat} onChange={(e) => setAlamat(e.target.value)} placeholder="Alamat lengkap..." required className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold placeholder:text-zinc-600" />
+                  <input type="text" value={alamat} onChange={(e) => setAlamat(e.target.value)} placeholder="Alamat lengkap..." required className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold placeholder:text-zinc-600" />
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">No. HP</label>
-                  <input type="tel" value={noHp} onChange={(e) => setNoHp(e.target.value)} placeholder="08xx..." required className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold placeholder:text-zinc-600" />
+                  <input type="tel" value={noHp} onChange={(e) => setNoHp(e.target.value)} placeholder="08xx..." required className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold placeholder:text-zinc-600" />
                 </div>
               </div>
 
               <div className="border-t border-[#292929] pt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">Pilih Console</label>
-                  <select value={selectedConsole} onChange={(e) => setSelectedConsole(e.target.value)} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold">
+                  <select value={selectedConsole} onChange={(e) => setSelectedConsole(e.target.value)} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold">
                     <option value="ps4">PS4 (Slim/Fat)</option>
                     <option value="ps4-pro">PS4 Pro</option>
                     <option value="ps5">PlayStation 5</option>
@@ -582,7 +582,7 @@ export default function SewaPSClient() {
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">Pilih Durasi Sewa</label>
-                  <select value={selectedDuration} onChange={(e) => { const d = e.target.value; setSelectedDuration(d); updateReturnDate(rentalDate, d); }} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold">
+                  <select value={selectedDuration} onChange={(e) => { const d = e.target.value; setSelectedDuration(d); updateReturnDate(rentalDate, d); }} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold">
                     <option value="1-hari">1 Hari</option>
                     <option value="2-hari">2 Hari</option>
                     <option value="3-hari">3 Hari</option>
@@ -597,11 +597,11 @@ export default function SewaPSClient() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">Tanggal Mulai Sewa</label>
-                  <input type="date" value={rentalDate} onChange={(e) => { const d = e.target.value; setRentalDate(d); updateReturnDate(d, selectedDuration); }} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold font-mono" required />
+                  <input type="date" value={rentalDate} onChange={(e) => { const d = e.target.value; setRentalDate(d); updateReturnDate(d, selectedDuration); }} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold font-mono" required />
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">Jam Mulai</label>
-                  <input type="time" value={jamMulai} onChange={(e) => setJamMulai(e.target.value)} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold font-mono" required />
+                  <input type="time" value={jamMulai} onChange={(e) => setJamMulai(e.target.value)} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold font-mono" required />
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-zinc-400/50 uppercase tracking-wider mb-2">Tanggal Pengembalian (Otomatis)</label>
@@ -609,7 +609,7 @@ export default function SewaPSClient() {
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">Jam Selesai</label>
-                  <input type="time" value={jamSelesai} onChange={(e) => setJamSelesai(e.target.value)} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#36B7F0] text-sm font-semibold font-mono" required />
+                  <input type="time" value={jamSelesai} onChange={(e) => setJamSelesai(e.target.value)} className="w-full px-4 py-3 bg-[#171717] border border-[#292929] rounded-xl text-white focus:outline-none focus:border-[#1FA6F0] text-sm font-semibold font-mono" required />
                 </div>
               </div>
 
@@ -635,7 +635,7 @@ export default function SewaPSClient() {
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-4 bg-[#36B7F0] hover:bg-[#2b96c7] text-black font-extrabold rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#1FA6F0] hover:bg-[#2b96c7] text-black font-extrabold rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5 fill-black/20" />
                   <span>KIRIM KE WHATSAPP</span>

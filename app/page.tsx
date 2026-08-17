@@ -43,7 +43,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#36B7F0] selection:text-black">
+    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#1FA6F0] selection:text-black">
       {/* Navigation */}
       <Navbar onOpenBooking={handleOpenBooking} />
 

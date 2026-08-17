@@ -40,7 +40,7 @@ export default function VipShowcase({ onOpenBooking }: VipShowcaseProps) {
 
               {/* ROOM NAME */}
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#22C7F2]">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1FA6F0]">
                   Floor 01 Setup
                 </span>
               </div>
@@ -59,7 +59,7 @@ export default function VipShowcase({ onOpenBooking }: VipShowcaseProps) {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-zinc-500 line-through">Rp45.000</span>
-                  <span className="text-2xl font-black text-[#22C7F2]">Rp35.000</span>
+                  <span className="text-2xl font-black text-[#1FA6F0]">Rp35.000</span>
                   <span className="text-xs text-zinc-400">/ jam</span>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function VipShowcase({ onOpenBooking }: VipShowcaseProps) {
                 onClick={() => onOpenBooking("VIP Room")}
                 className="w-full sm:w-auto rounded-xl bg-[#111318] hover:bg-[#171920] border border-[#242832] text-white font-bold px-5 py-3 text-sm flex items-center justify-center gap-2 transition-colors"
               >
-                <MessageCircle className="w-4 h-4 text-[#22C7F2]" />
+                <MessageCircle className="w-4 h-4 text-[#1FA6F0]" />
                 <span>Book VIP Room</span>
               </button>
             </div>

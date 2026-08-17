@@ -42,7 +42,7 @@ export default function FloorSection({ onOpenBooking }: FloorSectionProps) {
                     className="object-cover"
                   />
                   <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold bg-[#08090B]/90 text-white backdrop-blur border border-[#242832]">
-                    {isSmoking ? <Cigarette className="w-4 h-4 text-[#FF3038]" /> : <CigaretteOff className="w-4 h-4 text-[#22C7F2]" />}
+                    {isSmoking ? <Cigarette className="w-4 h-4 text-[#FF3038]" /> : <CigaretteOff className="w-4 h-4 text-[#1FA6F0]" />}
                     <span>{floor.environmentTag}</span>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function FloorSection({ onOpenBooking }: FloorSectionProps) {
                           key={idx}
                           className="inline-flex items-center gap-1.5 text-xs text-zinc-400"
                         >
-                          <Check className="w-3.5 h-3.5 text-[#22C7F2]" />
+                          <Check className="w-3.5 h-3.5 text-[#1FA6F0]" />
                           <span>{hl}</span>
                         </span>
                       ))}
@@ -99,13 +99,13 @@ export default function FloorSection({ onOpenBooking }: FloorSectionProps) {
                       onClick={() => onOpenBooking(`Floor ${floor.floorNumber} (${floor.environmentTag})`)}
                       className="inline-flex items-center gap-2 rounded-xl bg-[#111318] hover:bg-[#171920] border border-[#242832] text-white font-bold py-3 px-5 text-sm transition-colors"
                     >
-                      <MessageCircle className="w-4 h-4 text-[#22C7F2]" />
+                      <MessageCircle className="w-4 h-4 text-[#1FA6F0]" />
                       <span>Book Lantai {floor.floorNumber}</span>
                     </button>
 
                     <Link
                       href="/availability"
-                      className="text-xs font-semibold text-[#22C7F2] hover:underline inline-flex items-center gap-1"
+                      className="text-xs font-semibold text-[#1FA6F0] hover:underline inline-flex items-center gap-1"
                     >
                       <span>Lihat Game per Unit</span>
                       <span>→</span>

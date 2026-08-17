@@ -34,7 +34,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
                 </div>
               </div>
               <span className="font-extrabold text-xl tracking-wider text-white">
-                XPLAY <span className="text-[#36B7F0]">GAMES</span>
+                XPLAY <span className="text-[#1FA6F0]">GAMES</span>
               </span>
             </Link>
 
@@ -47,7 +47,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
 
             <button
               onClick={onOpenBooking}
-              className="px-5 py-2.5 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-[#36B7F0] font-bold text-xs flex items-center gap-2 transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-[#1FA6F0] font-bold text-xs flex items-center gap-2 transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp Official: {BUSINESS_INFO.whatsappNumber}</span>
@@ -61,42 +61,42 @@ export default function Footer({ onOpenBooking }: FooterProps) {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/" className="hover:text-[#1FA6F0] transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/sewa-ps" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/sewa-ps" className="hover:text-[#1FA6F0] transition-colors">
                   Sewa PS (Bawa Pulang)
                 </Link>
               </li>
               <li>
-                <Link href="/playbox" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/playbox" className="hover:text-[#1FA6F0] transition-colors">
                   Playbox (PS + TV)
                 </Link>
               </li>
               <li>
-                <Link href="/availability" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/availability" className="hover:text-[#1FA6F0] transition-colors">
                   Live Status Unit (Real-time)
                 </Link>
               </li>
               <li>
-                <Link href="/membership" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/membership" className="hover:text-[#1FA6F0] transition-colors">
                   Membership & Loyalty Rewards
                 </Link>
               </li>
               <li>
-                <Link href="/#pricing" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/#pricing" className="hover:text-[#1FA6F0] transition-colors">
                   Daftar Harga Main
                 </Link>
               </li>
               <li>
-                <Link href="/#facilities" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/#facilities" className="hover:text-[#1FA6F0] transition-colors">
                   Fasilitas
                 </Link>
               </li>
               <li>
-                <Link href="/#location" className="hover:text-[#36B7F0] transition-colors">
+                <Link href="/#location" className="hover:text-[#1FA6F0] transition-colors">
                   Lokasi
                 </Link>
               </li>

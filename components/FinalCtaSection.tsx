@@ -23,7 +23,7 @@ export default function FinalCtaSection({ onOpenBooking }: FinalCtaSectionProps)
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={onOpenBooking}
-            className="w-full sm:w-auto rounded-xl bg-[#22C7F2] hover:opacity-90 text-black font-extrabold px-8 py-4 text-base flex items-center justify-center gap-3 transition-opacity"
+            className="w-full sm:w-auto rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-extrabold px-8 py-4 text-base flex items-center justify-center gap-3 transition-opacity"
           >
             <MessageCircle className="w-5 h-5 fill-black/20" />
             <span>BOOKING SEKARANG</span>

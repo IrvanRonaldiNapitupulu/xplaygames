@@ -14,7 +14,7 @@ export const FACILITIES_DATA: FacilityCategory[] = [
     title: "Gaming Consoles",
     subtitle: "Pilihan Konsol Terlengkap",
     iconName: "Gamepad2",
-    accentColor: "#36B7F0",
+    accentColor: "#1FA6F0",
     items: [
       { name: "PlayStation 4", description: "Standard unit mabar kasual dengan performa lancar." },
       { name: "PlayStation 4+", description: "Pengalaman PS4 yang di-upgrade untuk gameplay lebih prima." },

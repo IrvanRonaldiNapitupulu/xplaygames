@@ -15,7 +15,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
       icon: Layers,
       value: "2 Floors",
       label: "Smoking & No-Smoking Area",
-      color: "#22C7F2",
+      color: "#1FA6F0",
     },
     {
       icon: Gamepad2,
@@ -47,7 +47,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
 
             {/* Top Brand Pill */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#111318] border border-[#242832] mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#22C7F2]" />
+              <span className="w-2 h-2 rounded-full bg-[#1FA6F0]" />
               <span className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 uppercase">
                 PLAYSTATION GAMING SPOT
               </span>
@@ -56,10 +56,10 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
               MAIN. MABAR. <br />
-              <span className="text-[#22C7F2] relative inline-block">
+              <span className="text-[#1FA6F0] relative inline-block">
                 MENANG.
                 <svg
-                  className="absolute -bottom-2 left-0 w-full h-3 text-[#22C7F2]/40"
+                  className="absolute -bottom-2 left-0 w-full h-3 text-[#1FA6F0]/40"
                   viewBox="0 0 100 20"
                   preserveAspectRatio="none"
                 >
@@ -78,7 +78,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-12">
               <button
                 onClick={onOpenBooking}
-                className="w-full sm:w-auto rounded-xl bg-[#22C7F2] hover:opacity-90 text-black font-extrabold px-8 py-4 text-base transition-opacity flex items-center justify-center gap-3"
+                className="w-full sm:w-auto rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-extrabold px-8 py-4 text-base transition-opacity flex items-center justify-center gap-3"
               >
                 <MessageCircle className="w-5 h-5 fill-black/20" />
                 <span>BOOKING SEKARANG</span>
@@ -139,7 +139,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                     href="https://vt.tiktok.com/ZSV1axhA5/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-lg bg-[#08090B] hover:bg-[#111318] border border-[#242832] text-xs font-bold text-[#22C7F2] hover:text-white transition-colors flex items-center gap-1"
+                    className="px-3 py-1.5 rounded-lg bg-[#08090B] hover:bg-[#111318] border border-[#242832] text-xs font-bold text-[#1FA6F0] hover:text-white transition-colors flex items-center gap-1"
                   >
                     <span>TikTok</span>
                     <ExternalLink className="w-3 h-3" />

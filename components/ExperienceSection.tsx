@@ -34,7 +34,7 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
           {PRICING_DATA.map((cat) => {
             const isSelected = cat.id === selectedId;
             const isVVIP = cat.id === "vvip";
-            const activeBorderColor = isVVIP ? "#FF2D8D" : "#22C7F2";
+            const activeBorderColor = isVVIP ? "#FF2D8D" : "#1FA6F0";
             return (
               <button
                 key={cat.id}
@@ -50,7 +50,7 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
               >
                 <span
                   className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: isVVIP ? "#FF2D8D" : "#22C7F2" }}
+                  style={{ backgroundColor: isVVIP ? "#FF2D8D" : "#1FA6F0" }}
                 />
                 <span>{cat.name}</span>
                 {cat.startingPrice && (
@@ -73,7 +73,7 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
                 <span
                   className="text-xs font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded"
                   style={{
-                    backgroundColor: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2",
+                    backgroundColor: selectedCategory.id === "vvip" ? "#FF2D8D" : "#1FA6F0",
                     color: selectedCategory.id === "vvip" ? "#ffffff" : "#000000",
                   }}
                 >
@@ -95,7 +95,7 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
                   <div key={idx} className="flex items-center gap-2 text-sm text-zinc-300">
                     <CheckCircle2
                       className="w-4 h-4 shrink-0"
-                      style={{ color: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2" }}
+                      style={{ color: selectedCategory.id === "vvip" ? "#FF2D8D" : "#1FA6F0" }}
                     />
                     <span>{feat}</span>
                   </div>
@@ -108,7 +108,7 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
                   onClick={() => onOpenBooking(selectedCategory.name)}
                   className="w-full sm:w-auto rounded-xl font-bold px-6 py-3 text-black text-sm flex items-center justify-center gap-2 transition-opacity hover:opacity-90"
                   style={{
-                    backgroundColor: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2",
+                    backgroundColor: selectedCategory.id === "vvip" ? "#FF2D8D" : "#1FA6F0",
                     color: selectedCategory.id === "vvip" ? "#ffffff" : "#000000",
                   }}
                 >
@@ -142,7 +142,7 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
                   <div className="text-right">
                     <span
                       className="text-3xl font-black"
-                      style={{ color: selectedCategory.id === "vvip" ? "#FF2D8D" : "#22C7F2" }}
+                      style={{ color: selectedCategory.id === "vvip" ? "#FF2D8D" : "#1FA6F0" }}
                     >
                       {selectedCategory.startingPrice}
                     </span>
@@ -161,7 +161,7 @@ export default function ExperienceSection({ onSelectCategory, onOpenBooking }: E
                   </div>
                   <div className="flex justify-between py-1">
                     <span>8 Jam (Paket Hemat)</span>
-                    <strong className="text-[#22C7F2] font-bold">{selectedCategory.rates[7]?.formattedPrice}</strong>
+                    <strong className="text-[#1FA6F0] font-bold">{selectedCategory.rates[7]?.formattedPrice}</strong>
                   </div>
                 </div>
 

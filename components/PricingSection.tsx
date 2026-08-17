@@ -43,7 +43,7 @@ export default function PricingSection({ onOpenBooking, onOpenPosterModal }: Pri
             onClick={onOpenPosterModal}
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#111318] hover:bg-[#171920] border border-[#242832] text-xs font-semibold text-zinc-300 transition-colors shrink-0"
           >
-            <FileText className="w-4 h-4 text-[#22C7F2]" />
+            <FileText className="w-4 h-4 text-[#1FA6F0]" />
             <span>Lihat Poster Price List Official</span>
             <Eye className="w-3.5 h-3.5 text-zinc-500" />
           </button>
@@ -55,7 +55,7 @@ export default function PricingSection({ onOpenBooking, onOpenPosterModal }: Pri
             onClick={() => setActiveTab("all")}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors ${
               activeTab === "all"
-                ? "bg-[#22C7F2] text-black"
+                ? "bg-[#1FA6F0] text-black"
                 : "bg-[#111318] text-zinc-400 border border-[#242832] hover:text-white"
             }`}
           >
@@ -64,7 +64,7 @@ export default function PricingSection({ onOpenBooking, onOpenPosterModal }: Pri
 
           {PRICING_DATA.map((cat) => {
             const isVVIP = cat.id === "vvip";
-            const activeBg = isVVIP ? "#FF2D8D" : "#22C7F2";
+            const activeBg = isVVIP ? "#FF2D8D" : "#1FA6F0";
             return (
               <button
                 key={cat.id}
@@ -90,7 +90,7 @@ export default function PricingSection({ onOpenBooking, onOpenPosterModal }: Pri
           {displayedCategories.map((cat: CategoryPricing) => {
             const isExpanded = expandedCategory === cat.id;
             const isVVIP = cat.id === "vvip";
-            const accentColor = isVVIP ? "#FF2D8D" : "#22C7F2";
+            const accentColor = isVVIP ? "#FF2D8D" : "#1FA6F0";
 
             return (
               <div
@@ -140,7 +140,7 @@ export default function PricingSection({ onOpenBooking, onOpenPosterModal }: Pri
 
                     <button
                       onClick={() => toggleExpand(cat.id)}
-                      className="w-full mt-2 pt-2 border-t border-[#1f1f1f] text-[11px] text-[#22C7F2] font-semibold flex items-center justify-center gap-1 hover:underline"
+                      className="w-full mt-2 pt-2 border-t border-[#1f1f1f] text-[11px] text-[#1FA6F0] font-semibold flex items-center justify-center gap-1 hover:underline"
                     >
                       <span>{isExpanded ? "Sembunyikan" : "Tarif s.d 8 Jam"}</span>
                       <ChevronDown className={`w-3 h-3 transition-transform ${isExpanded ? "rotate-180" : ""}`} />

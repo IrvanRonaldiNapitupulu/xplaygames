@@ -30,7 +30,7 @@ export const FLOORS_DATA: FloorInfo[] = [
     badgeColor: "#FF3038", // Red accent
     imageSrc: "/lantai1.jpeg",
     units: [
-      { type: "PS4", count: 8, label: "8 × PS4 Standard", accent: "#36B7F0" },
+      { type: "PS4", count: 8, label: "8 × PS4 Standard", accent: "#1FA6F0" },
       { type: "PS5", count: 1, label: "1 × PS5 Regular", accent: "#FFD84D" },
       { type: "VIP", count: 1, label: "1 × PS5 VIP Room", accent: "#B45CE0" },
     ],
@@ -46,7 +46,7 @@ export const FLOORS_DATA: FloorInfo[] = [
     badgeColor: "#75D84B", // Green accent
     imageSrc: "/lantai2.jpeg",
     units: [
-      { type: "PS4", count: 6, label: "6 × PS4 Standard", accent: "#36B7F0" },
+      { type: "PS4", count: 6, label: "6 × PS4 Standard", accent: "#1FA6F0" },
       { type: "PS4+", count: 1, label: "1 × PS4+", accent: "#75D84B" },
       { type: "PS5", count: 1, label: "1 × PS5 Regular", accent: "#FFD84D" },
       { type: "VVIP", count: 2, label: "2 × VVIP Private Rooms", accent: "#F45CB4" },

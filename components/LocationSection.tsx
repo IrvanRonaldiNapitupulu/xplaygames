@@ -38,10 +38,10 @@ export default function LocationSection({ onOpenBooking }: LocationSectionProps)
                 <div className="border-b border-[#1f1f1f] pb-4">
                   <span className="text-xs font-mono text-zinc-400 block mb-1 uppercase">Jam Operasional</span>
                   <div className="text-base font-bold text-white flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#22C7F2]" />
+                    <Clock className="w-4 h-4 text-[#1FA6F0]" />
                     <span>{BUSINESS_INFO.operatingHoursText}</span>
                   </div>
-                  <span className="text-xs text-[#22C7F2] mt-1 block">
+                  <span className="text-xs text-[#1FA6F0] mt-1 block">
                     Buka setiap hari (10:00 — 03:00 WIB)
                   </span>
                 </div>
@@ -49,7 +49,7 @@ export default function LocationSection({ onOpenBooking }: LocationSectionProps)
                 <div className="border-b border-[#1f1f1f] pb-4">
                   <span className="text-xs font-mono text-zinc-400 block mb-1 uppercase">WhatsApp Official</span>
                   <div className="text-base font-bold text-white font-mono flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4 text-[#22C7F2]" />
+                    <MessageCircle className="w-4 h-4 text-[#1FA6F0]" />
                     <span>{BUSINESS_INFO.whatsappNumber}</span>
                   </div>
                   <span className="text-xs text-zinc-400 mt-1 block">
@@ -65,7 +65,7 @@ export default function LocationSection({ onOpenBooking }: LocationSectionProps)
                 href={BUSINESS_INFO.googleMapsDirectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-xl bg-[#22C7F2] hover:opacity-90 text-black font-extrabold py-3 px-4 text-sm flex items-center justify-center gap-2 transition-opacity"
+                className="w-full rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-extrabold py-3 px-4 text-sm flex items-center justify-center gap-2 transition-opacity"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>Buka Google Maps</span>
@@ -75,7 +75,7 @@ export default function LocationSection({ onOpenBooking }: LocationSectionProps)
                 onClick={onOpenBooking}
                 className="w-full rounded-xl bg-[#111318] hover:bg-[#171920] border border-[#242832] text-white font-bold py-3 px-4 text-sm flex items-center justify-center gap-2 transition-colors"
               >
-                <MessageCircle className="w-4 h-4 text-[#22C7F2]" />
+                <MessageCircle className="w-4 h-4 text-[#1FA6F0]" />
                 <span>Booking via WhatsApp</span>
               </button>
             </div>

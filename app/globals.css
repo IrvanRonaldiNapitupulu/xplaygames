@@ -13,7 +13,7 @@
     --xplay-red: #FF3038;
     --xplay-yellow: #FFD84D;
     --xplay-green: #75D84B;
-    --xplay-blue: #36B7F0;
+    --xplay-blue: #1FA6F0;
     --xplay-purple: #B45CE0;
     --xplay-pink: #F45CB4;
   }
@@ -49,7 +49,7 @@
 
 /* Custom visual utilities */
 .glow-blue {
-  box-shadow: 0 0 35px -5px rgba(54, 183, 240, 0.25);
+  box-shadow: 0 0 35px -5px rgba(31, 166, 240, 0.25);
 }
 
 .glow-purple {
@@ -70,7 +70,7 @@
 
 /* Subtle gradient text utility for accents */
 .text-xplay-accent {
-  background: linear-gradient(135deg, #36B7F0 0%, #B45CE0 100%);
+  background: linear-gradient(135deg, #1FA6F0 0%, #B45CE0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

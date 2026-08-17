@@ -48,7 +48,7 @@ export default function HowToBookSection({ onOpenBooking }: HowToBookSectionProp
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 border-b border-[#1f1f1f] pb-10">
           {steps.map((step, idx) => (
             <div key={idx} className="flex flex-col">
-              <span className="text-4xl sm:text-5xl font-black font-mono text-[#22C7F2] mb-3">
+              <span className="text-4xl sm:text-5xl font-black font-mono text-[#1FA6F0] mb-3">
                 {step.num}
               </span>
               <h3 className="text-lg font-bold text-white mb-2">
@@ -65,7 +65,7 @@ export default function HowToBookSection({ onOpenBooking }: HowToBookSectionProp
         <div>
           <button
             onClick={onOpenBooking}
-            className="rounded-xl bg-[#22C7F2] hover:opacity-90 text-black font-extrabold px-6 py-3.5 text-sm inline-flex items-center gap-2 transition-opacity"
+            className="rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-extrabold px-6 py-3.5 text-sm inline-flex items-center gap-2 transition-opacity"
           >
             <MessageCircle className="w-4 h-4 fill-black/20" />
             <span>Booking Sekarang via WhatsApp</span>

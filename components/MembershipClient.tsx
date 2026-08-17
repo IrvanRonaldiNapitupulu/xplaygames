@@ -13,7 +13,7 @@ const REWARD_DATA = {
     title: "PS4 Regular",
     subtitle: "Console PlayStation 4 Standard",
     badge: "Standard",
-    accent: "#36B7F0",
+    accent: "#1FA6F0",
     items: [
       { duration: "30 Menit", value: "Rp6.000", points: 12 },
       { duration: "1 Jam", value: "Rp12.000", points: 24 },
@@ -126,7 +126,7 @@ export default function MembershipClient() {
   const currentCategory = REWARD_DATA[activeTab];
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col font-sans selection:bg-[#36B7F0] selection:text-black">
+    <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col font-sans selection:bg-[#1FA6F0] selection:text-black">
       <Navbar onOpenBooking={() => window.open("https://wa.me/6285194345274", "_blank")} />
 
       {/* Hero Section */}
@@ -134,7 +134,7 @@ export default function MembershipClient() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-none mb-6 text-white">
             MAIN LEBIH SERING.<br />
-            <span className="text-[#22C7F2]">
+            <span className="text-[#1FA6F0]">
               KUMPULKAN POIN.
             </span><br />
             MAIN LAGI.
@@ -163,9 +163,9 @@ export default function MembershipClient() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#36B7F0]/40 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-[#36B7F0]/5 rounded-bl-full pointer-events-none" />
-              <div className="w-12 h-12 rounded-xl bg-[#36B7F0]/10 flex items-center justify-center text-[#36B7F0] mb-6 font-black text-lg font-mono">01</div>
+            <div className="bg-[#111111] border border-[#222222] p-8 rounded-2xl relative overflow-hidden group hover:border-[#1FA6F0]/40 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-[#1FA6F0]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl bg-[#1FA6F0]/10 flex items-center justify-center text-[#1FA6F0] mb-6 font-black text-lg font-mono">01</div>
               <h3 className="text-lg font-bold mb-3 uppercase tracking-wide">MAIN DI XPLAY</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
                 Setiap transaksi billing di XPLAY Games menghasilkan poin untukmu secara otomatis.
@@ -235,12 +235,12 @@ export default function MembershipClient() {
             <div className="bg-[#111318] border border-[#242832] p-8 rounded-3xl lg:col-span-5 flex flex-col justify-between relative">
               
               <div>
-                <h4 className="text-sm font-mono tracking-widest text-[#36B7F0] uppercase mb-6">SIMULASI ALUR POIN</h4>
+                <h4 className="text-sm font-mono tracking-widest text-[#1FA6F0] uppercase mb-6">SIMULASI ALUR POIN</h4>
                 
                 <div className="space-y-4">
                   {/* Step A */}
                   <div className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-[#36B7F0]/10 border border-[#36B7F0]/30 text-xs font-mono text-[#36B7F0] flex items-center justify-center shrink-0 mt-0.5">A</span>
+                    <span className="w-6 h-6 rounded-full bg-[#1FA6F0]/10 border border-[#1FA6F0]/30 text-xs font-mono text-[#1FA6F0] flex items-center justify-center shrink-0 mt-0.5">A</span>
                     <p className="text-xs sm:text-sm text-zinc-300 leading-snug">
                       Kamu menghabiskan <strong className="text-white">Rp100.000</strong> untuk bermain di XPLAY.
                     </p>
@@ -333,7 +333,7 @@ export default function MembershipClient() {
             {currentCategory.items.map((item, idx) => (
               <div 
                 key={idx} 
-                className="bg-[#111111] border border-[#222222] rounded-2xl p-6 relative overflow-hidden group hover:border-[#36B7F0]/30 transition-all duration-300 flex flex-col justify-between"
+                className="bg-[#111111] border border-[#222222] rounded-2xl p-6 relative overflow-hidden group hover:border-[#1FA6F0]/30 transition-all duration-300 flex flex-col justify-between"
               >
 
                 {/* Card Top */}
@@ -348,7 +348,7 @@ export default function MembershipClient() {
                     <span className="text-zinc-500 text-xs font-semibold font-mono">REWARD #{idx + 1}</span>
                   </div>
                   
-                  <h3 className="text-lg font-black text-white group-hover:text-[#36B7F0] transition-colors leading-tight mb-1">
+                  <h3 className="text-lg font-black text-white group-hover:text-[#1FA6F0] transition-colors leading-tight mb-1">
                     {item.duration}
                   </h3>
                   <p className="text-xs text-zinc-500 font-medium">

@@ -53,7 +53,7 @@ export default function PosterModal({ isOpen, onClose }: PosterModalProps) {
             download="PriceList-XPLAY-Games.jpeg"
             className="px-4 py-2 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#292929] text-zinc-200 font-semibold flex items-center gap-2 transition-colors"
           >
-            <Download className="w-4 h-4 text-[#36B7F0]" />
+            <Download className="w-4 h-4 text-[#1FA6F0]" />
             <span>Download Poster High-Res</span>
           </a>
         </div>

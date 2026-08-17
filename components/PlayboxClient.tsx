@@ -113,7 +113,7 @@ export default function PlayboxClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#36B7F0] selection:text-black">
+    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#1FA6F0] selection:text-black">
       <Navbar onOpenBooking={() => setIsBookingOpen(true)} />
 
       <main className="flex-1 pt-24 pb-16">
@@ -418,7 +418,7 @@ export default function PlayboxClient() {
               <thead>
                 <tr className="bg-[#111111] border-b border-[#292929]">
                   <th className="p-4 font-mono text-xs text-zinc-400 uppercase">FITUR / LAYANAN</th>
-                  <th className="p-4 font-mono text-xs text-[#36B7F0] uppercase">MAIN DI LOKASI XPLAY</th>
+                  <th className="p-4 font-mono text-xs text-[#1FA6F0] uppercase">MAIN DI LOKASI XPLAY</th>
                   <th className="p-4 font-mono text-xs text-[#75D84B] uppercase">SEWA PS (BAWA PULANG)</th>
                   <th className="p-4 font-mono text-xs text-[#F45CB4] uppercase">PLAYBOX (PAKET + TV)</th>
                 </tr>
@@ -462,7 +462,7 @@ export default function PlayboxClient() {
                 </tr>
                 <tr className="bg-[#111111]/30">
                   <td className="p-4 font-semibold text-zinc-300">Rekomendasi Untuk</td>
-                  <td className="p-4 text-[#36B7F0] font-medium text-xs">Mabar seru & nongkrong di tempat</td>
+                  <td className="p-4 text-[#1FA6F0] font-medium text-xs">Mabar seru & nongkrong di tempat</td>
                   <td className="p-4 text-[#75D84B] font-medium text-xs">Gaming santai di rumah sendiri</td>
                   <td className="p-4 text-[#F45CB4] font-medium text-xs">Mabar lengkap di rumah tanpa TV sendiri</td>
                 </tr>

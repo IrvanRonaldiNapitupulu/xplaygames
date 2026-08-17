@@ -137,7 +137,7 @@ export default function AvailabilityClient() {
   const filteredStations = data?.stations?.filter(s => s.floor === activeFloor) || [];
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#36B7F0] selection:text-black">
+    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#1FA6F0] selection:text-black">
       <Navbar onOpenBooking={() => setIsBookingOpen(true)} />
 
       <main className="flex-1 pt-24 pb-16">
@@ -146,8 +146,8 @@ export default function AvailabilityClient() {
         <section className="relative py-12 md:py-16 border-b border-[#242832] bg-[#08090B]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#36B7F0]/10 border border-[#36B7F0]/20 text-[#36B7F0] text-xs font-mono font-bold uppercase mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#36B7F0] animate-ping" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1FA6F0]/10 border border-[#1FA6F0]/20 text-[#1FA6F0] text-xs font-mono font-bold uppercase mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#1FA6F0] animate-ping" />
                 <span>LIVE UPDATING SYSTEM</span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
@@ -161,7 +161,7 @@ export default function AvailabilityClient() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
               {data && (
                 <div className="flex items-center gap-2 text-xs text-zinc-400 font-mono bg-[#111111] px-4 py-2.5 rounded-xl border border-[#292929]">
-                  <Clock className="w-3.5 h-3.5 text-[#36B7F0]" />
+                  <Clock className="w-3.5 h-3.5 text-[#1FA6F0]" />
                   <span>Diperbarui {secondsAgo} detik lalu</span>
                 </div>
               )}
@@ -202,7 +202,7 @@ export default function AvailabilityClient() {
                 onClick={() => setActiveFloor(1)}
                 className={`px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                   activeFloor === 1
-                    ? "bg-[#36B7F0] text-black shadow-lg"
+                    ? "bg-[#1FA6F0] text-black shadow-lg"
                     : "text-zinc-400 hover:text-white"
                 }`}
               >
@@ -213,7 +213,7 @@ export default function AvailabilityClient() {
                 onClick={() => setActiveFloor(2)}
                 className={`px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                   activeFloor === 2
-                    ? "bg-[#36B7F0] text-black shadow-lg"
+                    ? "bg-[#1FA6F0] text-black shadow-lg"
                     : "text-zinc-400 hover:text-white"
                 }`}
               >
@@ -246,7 +246,7 @@ export default function AvailabilityClient() {
           {/* Loading / Error States */}
           {loading && !data && (
             <div className="py-24 text-center">
-              <div className="inline-block w-8 h-8 border-4 border-t-transparent border-[#36B7F0] rounded-full animate-spin mb-4" />
+              <div className="inline-block w-8 h-8 border-4 border-t-transparent border-[#1FA6F0] rounded-full animate-spin mb-4" />
               <p className="text-zinc-400 text-sm font-semibold">Menghubungkan ke server billing...</p>
             </div>
           )}
@@ -262,7 +262,7 @@ export default function AvailabilityClient() {
               </p>
               <button
                 onClick={fetchStatus}
-                className="px-6 py-3 rounded-xl bg-[#36B7F0] hover:bg-[#2b96c7] text-black font-extrabold text-sm transition-all"
+                className="px-6 py-3 rounded-xl bg-[#1FA6F0] hover:bg-[#2b96c7] text-black font-extrabold text-sm transition-all"
               >
                 Coba lagi
               </button>
@@ -287,7 +287,7 @@ export default function AvailabilityClient() {
                       isVVIP
                         ? "bg-gradient-to-br from-[#1c1221] to-[#111111] border-[#B45CE0]/30 hover:border-[#B45CE0]"
                         : isVIP
-                          ? "bg-gradient-to-br from-[#121c21] to-[#111111] border-[#36B7F0]/30 hover:border-[#36B7F0]"
+                          ? "bg-gradient-to-br from-[#121c21] to-[#111111] border-[#1FA6F0]/30 hover:border-[#1FA6F0]"
                           : "bg-[#111111] border-[#292929] hover:border-zinc-700"
                     }`}
                   >
@@ -296,7 +296,7 @@ export default function AvailabilityClient() {
                       <div className="absolute top-0 right-0 px-2.5 py-0.5 bg-gradient-to-r text-black font-mono font-black text-[9px] uppercase tracking-widest rounded-bl-xl flex items-center gap-1 shadow-md" style={{
                         backgroundImage: isVVIP 
                           ? "linear-gradient(to right, #B45CE0, #FF3038)" 
-                          : "linear-gradient(to right, #36B7F0, #75D84B)"
+                          : "linear-gradient(to right, #1FA6F0, #75D84B)"
                       }}>
                         <Crown className="w-2.5 h-2.5" />
                         <span>{isVVIP ? "VVIP ROOM" : "VIP ROOM"}</span>
@@ -310,7 +310,7 @@ export default function AvailabilityClient() {
                           <span className="block text-[11px] font-mono font-bold text-zinc-500 uppercase">
                             STATION {station.stationId}
                           </span>
-                          <h4 className="text-base font-black text-white group-hover:text-[#36B7F0] transition-colors">
+                          <h4 className="text-base font-black text-white group-hover:text-[#1FA6F0] transition-colors">
                             {station.stationName}
                           </h4>
                         </div>
@@ -362,7 +362,7 @@ export default function AvailabilityClient() {
                               games: stationGames,
                             })
                           }
-                          className="text-[11px] font-semibold text-[#22C7F2] hover:underline flex items-center gap-1"
+                          className="text-[11px] font-semibold text-[#1FA6F0] hover:underline flex items-center gap-1"
                         >
                           <span>Lihat Daftar Game</span>
                           <span>→</span>
@@ -445,7 +445,7 @@ export default function AvailabilityClient() {
                         onClick={() => handleWhatsAppBooking(station)}
                         className={`w-full py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all ${
                           isAvailable
-                            ? "bg-[#36B7F0] hover:bg-[#2b96c7] text-black hover:scale-105 active:scale-95 shadow-md shadow-[#36B7F0]/10"
+                            ? "bg-[#1FA6F0] hover:bg-[#2b96c7] text-black hover:scale-105 active:scale-95 shadow-md shadow-[#1FA6F0]/10"
                             : "bg-[#171717] hover:bg-[#222222] border border-[#292929] text-zinc-400 hover:text-white"
                         }`}
                       >
@@ -477,7 +477,7 @@ export default function AvailabilityClient() {
         <section className="py-16 bg-[#111111]/30 border-y border-[#292929] mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-xs font-mono text-[#36B7F0] font-bold uppercase tracking-wider block mb-2">IMPORTANT BUSINESS DISTINCTION</span>
+              <span className="text-xs font-mono text-[#1FA6F0] font-bold uppercase tracking-wider block mb-2">IMPORTANT BUSINESS DISTINCTION</span>
               <h2 className="text-3xl font-black text-white mb-4">LAYANAN XPLAY GAMES</h2>
               <p className="text-zinc-400 text-sm">
                 Harap bedakan layanan mabar di lokasi kami dengan produk rental bawa pulang ke rumah demi kenyamanan bersama.
@@ -486,9 +486,9 @@ export default function AvailabilityClient() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Option 1: Main di XPLAY */}
-              <div className="bg-[#111111] border border-[#36B7F0]/30 rounded-3xl p-6 flex flex-col justify-between hover:border-[#36B7F0] transition-colors">
+              <div className="bg-[#111111] border border-[#1FA6F0]/30 rounded-3xl p-6 flex flex-col justify-between hover:border-[#1FA6F0] transition-colors">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-[#36B7F0]/10 border border-[#36B7F0]/20 flex items-center justify-center text-[#36B7F0] mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-[#1FA6F0]/10 border border-[#1FA6F0]/20 flex items-center justify-center text-[#1FA6F0] mb-5">
                     <Gamepad2 className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">1. Main di XPLAY</h3>
@@ -498,7 +498,7 @@ export default function AvailabilityClient() {
                 </div>
                 <Link
                   href="/#pricing"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#36B7F0] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1FA6F0] hover:underline"
                 >
                   <span>Lihat Tarif Main</span>
                   <ChevronRight className="w-3.5 h-3.5" />

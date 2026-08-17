@@ -36,13 +36,13 @@ export default function GameListModal({
         {/* Header */}
         <div className="px-6 py-5 border-b border-[#242832] flex items-center justify-between bg-[#111318]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#22C7F2]/10 border border-[#22C7F2]/20 flex items-center justify-center text-[#22C7F2]">
+            <div className="w-10 h-10 rounded-xl bg-[#1FA6F0]/10 border border-[#1FA6F0]/20 flex items-center justify-center text-[#1FA6F0]">
               <Gamepad2 className="w-5 h-5" />
             </div>
             <div>
               <h3 className="text-lg font-bold text-white">Daftar Game Tersedia</h3>
               <p className="text-xs text-zinc-400 font-mono">
-                {unitName} · <span className="text-[#22C7F2] font-semibold">{consoleType}</span>
+                {unitName} · <span className="text-[#1FA6F0] font-semibold">{consoleType}</span>
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function GameListModal({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari judul game..."
-              className="w-full bg-[#111318] border border-[#242832] text-sm text-white placeholder-zinc-500 pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:border-[#22C7F2] transition-colors"
+              className="w-full bg-[#111318] border border-[#242832] text-sm text-white placeholder-zinc-500 pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:border-[#1FA6F0] transition-colors"
             />
             {searchQuery && (
               <button
@@ -92,7 +92,7 @@ export default function GameListModal({
                   className="py-2 px-3 rounded-lg hover:bg-[#111318] border-b border-[#1a1d24]/50 flex items-center justify-between text-xs sm:text-sm text-zinc-200 transition-colors"
                 >
                   <span className="font-medium">{game}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#22C7F2]/60 shrink-0 ml-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1FA6F0]/60 shrink-0 ml-2" />
                 </div>
               ))}
             </div>
@@ -122,7 +122,7 @@ export default function GameListModal({
                   onClose();
                   onOpenBooking();
                 }}
-                className="w-1/2 sm:w-auto px-5 py-2.5 rounded-xl bg-[#22C7F2] hover:opacity-90 text-black font-bold text-xs flex items-center justify-center gap-2 transition-opacity"
+                className="w-1/2 sm:w-auto px-5 py-2.5 rounded-xl bg-[#1FA6F0] hover:opacity-90 text-black font-bold text-xs flex items-center justify-center gap-2 transition-opacity"
               >
                 <MessageCircle className="w-3.5 h-3.5 fill-black/20" />
                 <span>Booking Unit Ini</span>
