@@ -171,7 +171,7 @@ export default function PlayboxClient() {
             <div className="flex items-center gap-2.5">
               <ShieldAlert className="w-5 h-5 text-[#FF3038] shrink-0" />
               <p className="text-xs sm:text-sm text-zinc-300">
-                <strong>PENTING:</strong> Sistem console Playbox menggunakan **HEN (Offline)**. Konsol **TIDAK boleh dihubungkan ke internet/Wi-Fi**.
+                <strong className="text-white">PENTING:</strong> Sistem console Playbox menggunakan <strong className="font-bold text-white">HEN (Offline)</strong>. Konsol <strong className="font-bold text-white">TIDAK boleh dihubungkan ke internet/Wi-Fi</strong>.
               </p>
             </div>
             <span className="text-[10px] font-mono text-[#FF3038] font-bold tracking-wider uppercase">
@@ -334,16 +334,16 @@ export default function PlayboxClient() {
                     <div className="space-y-2">
                       <span className="block font-bold text-white uppercase text-xs tracking-wider text-[#F45CB4]">SYARAT JAMINAN:</span>
                       <ul className="list-disc pl-5 space-y-1.5">
-                        <li>Penyewa bersedia **difoto** bersama unit Playbox saat serah terima.</li>
-                        <li>Wajib meninggalkan **jaminan eKTP asli** penyewa selama masa sewa.</li>
+                        <li>Penyewa bersedia <strong className="font-bold text-white">difoto</strong> bersama unit Playbox saat serah terima.</li>
+                        <li>Wajib meninggalkan <strong className="font-bold text-white">jaminan eKTP asli</strong> penyewa selama masa sewa.</li>
                       </ul>
                     </div>
                     <div className="space-y-2">
                       <span className="block font-bold text-white uppercase text-xs tracking-wider text-[#75D84B]">METODE PEMBAYARAN:</span>
                       <ul className="list-disc pl-5 space-y-1.5">
-                        <li>Penyewaan harus **lunas dibayar di awal** sebelum unit dibawa pulang.</li>
-                        <li>Mendukung pembayaran via **QRIS**, **Transfer**, dan **Cash**.</li>
-                        <li>Pembayaran cash di lokasi berlaku sistem **First Come First Serve** (Siapa cepat dia dapat selama unit tersedia).</li>
+                        <li>Penyewaan harus <strong className="font-bold text-white">lunas dibayar di awal</strong> sebelum unit dibawa pulang.</li>
+                        <li>Mendukung pembayaran via <strong className="font-bold text-white">QRIS</strong>, <strong className="font-bold text-white">Transfer</strong>, dan <strong className="font-bold text-white">Cash</strong>.</li>
+                        <li>Pembayaran cash di lokasi berlaku sistem <strong className="font-bold text-white">First Come First Serve</strong> (Siapa cepat dia dapat selama unit tersedia).</li>
                       </ul>
                     </div>
                   </div>
@@ -364,10 +364,10 @@ export default function PlayboxClient() {
                 <div className="p-6 border-t border-[#292929] text-sm text-zinc-300 space-y-3 leading-relaxed bg-[#0e0e0e]">
                   <ul className="list-disc pl-5 space-y-2">
                     <li className="text-[#FF3038] font-bold">DILARANG KERAS menghubungkan Playbox ke internet.</li>
-                    <li>**Dilarang menghapus** game digital atau akun profil di dalam konsol.</li>
-                    <li>**Dilarang menghapus akun** profil bawaan.</li>
-                    <li>Unit konsol dan TV wajib dikembalikan dalam **kondisi baik** dan lengkap seperti semula.</li>
-                    <li>Keterlambatan pengembalian unit dikenakan denda **Rp15.000 / jam**.</li>
+                    <li><strong className="font-bold text-white">Dilarang menghapus</strong> game digital atau akun profil di dalam konsol.</li>
+                    <li><strong className="font-bold text-white">Dilarang menghapus akun</strong> profil bawaan.</li>
+                    <li>Unit konsol dan TV wajib dikembalikan dalam <strong className="font-bold text-white">kondisi baik</strong> dan lengkap seperti semula.</li>
+                    <li>Keterlambatan pengembalian unit dikenakan denda <strong className="font-bold text-white">Rp15.000 / jam</strong>.</li>
                   </ul>
                 </div>
               )}

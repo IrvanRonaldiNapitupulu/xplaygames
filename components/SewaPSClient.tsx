@@ -210,7 +210,7 @@ export default function SewaPSClient() {
             <div className="flex items-center gap-2.5">
               <Info className="w-5 h-5 text-[#FFD84D] shrink-0" />
               <p className="text-xs sm:text-sm text-zinc-300">
-                Layanan sewa bawa pulang **tidak termasuk TV**. Untuk paket lengkap dengan TV, lihat layanan <Link href="/playbox" className="text-[#1FA6F0] hover:underline font-bold">Playbox</Link>.
+                Layanan sewa bawa pulang <strong className="font-bold text-white">tidak termasuk TV</strong>. Untuk paket lengkap dengan TV, lihat layanan <Link href="/playbox" className="text-[#1FA6F0] hover:underline font-bold">Playbox</Link>.
               </p>
             </div>
             <span className="text-[10px] font-mono text-zinc-500 tracking-wider uppercase">
@@ -381,17 +381,17 @@ export default function SewaPSClient() {
                     <div className="space-y-2">
                       <span className="block font-bold text-white uppercase text-xs tracking-wider text-[#1FA6F0]">PERSYARATAN DOKUMEN:</span>
                       <ul className="list-disc pl-5 space-y-1.5">
-                        <li>Wajib bersedia **difoto** bersama unit saat penyerahan.</li>
-                        <li>Wajib meninggalkan **jaminan eKTP asli** penyewa selama masa sewa.</li>
-                        <li>Penyewa harus memiliki **koneksi internet** aktif di rumah (untuk verifikasi lisensi game digital).</li>
+                        <li>Wajib bersedia <strong className="font-bold text-white">difoto</strong> bersama unit saat penyerahan.</li>
+                        <li>Wajib meninggalkan <strong className="font-bold text-white">jaminan eKTP asli</strong> penyewa selama masa sewa.</li>
+                        <li>Penyewa harus memiliki <strong className="font-bold text-white">koneksi internet</strong> aktif di rumah (untuk verifikasi lisensi game digital).</li>
                       </ul>
                     </div>
                     <div className="space-y-2">
                       <span className="block font-bold text-white uppercase text-xs tracking-wider text-[#75D84B]">METODE PEMBAYARAN:</span>
                       <ul className="list-disc pl-5 space-y-1.5">
-                        <li>Penyewaan harus **lunas dibayar di awal** sebelum unit dibawa pulang.</li>
-                        <li>Mendukung pembayaran via **QRIS**, **Transfer Bank**, dan **Cash**.</li>
-                        <li>Pembayaran cash di lokasi berlaku sistem **First Come First Serve** (Siapa cepat dia dapat selama unit tersedia).</li>
+                        <li>Penyewaan harus <strong className="font-bold text-white">lunas dibayar di awal</strong> sebelum unit dibawa pulang.</li>
+                        <li>Mendukung pembayaran via <strong className="font-bold text-white">QRIS</strong>, <strong className="font-bold text-white">Transfer Bank</strong>, dan <strong className="font-bold text-white">Cash</strong>.</li>
+                        <li>Pembayaran cash di lokasi berlaku sistem <strong className="font-bold text-white">First Come First Serve</strong> (Siapa cepat dia dapat selama unit tersedia).</li>
                       </ul>
                     </div>
                   </div>
@@ -411,10 +411,10 @@ export default function SewaPSClient() {
               {rulesOpen && (
                 <div className="p-6 border-t border-[#292929] text-sm text-zinc-300 space-y-3 leading-relaxed bg-[#0e0e0e]">
                   <ul className="list-disc pl-5 space-y-2">
-                    <li>Unit console wajib dikembalikan dalam **kondisi baik** dan lengkap seperti semula.</li>
-                    <li>**Dilarang menghapus** game digital atau akun profil bawaan yang terinstall di dalam console.</li>
-                    <li>Penyewa **diperbolehkan menambahkan akun personal** untuk memuat data save game sendiri.</li>
-                    <li>Khusus untuk game **PES 2021 / eFootball**, pemain/transfers **dilarang keras untuk diedit** karena dapat merusak file patch update yang terinstall.</li>
+                    <li>Unit console wajib dikembalikan dalam <strong className="font-bold text-white">kondisi baik</strong> dan lengkap seperti semula.</li>
+                    <li><strong className="font-bold text-white">Dilarang menghapus</strong> game digital atau akun profil bawaan yang terinstall di dalam console.</li>
+                    <li>Penyewa <strong className="font-bold text-white">diperbolehkan menambahkan akun personal</strong> untuk memuat data save game sendiri.</li>
+                    <li>Khusus untuk game <strong className="font-bold text-white">PES 2021 / eFootball</strong>, pemain/transfers <strong className="font-bold text-white">dilarang keras untuk diedit</strong> karena dapat merusak file patch update yang terinstall.</li>
                     <li><strong className="text-[#FF3038]">PENTING:</strong> Uang jaminan dapat hangus sepenuhnya jika terbukti menghapus game bawaan atau menghilangkan patch game sesuai ketentuan XPLAY.</li>
                   </ul>
                 </div>

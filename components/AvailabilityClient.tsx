@@ -469,7 +469,7 @@ export default function AvailabilityClient() {
           {/* Disclaimer text below WhatsApp CTA */}
           <div className="max-w-2xl mx-auto text-center mt-8 text-xs text-zinc-500 leading-relaxed bg-[#111111]/40 border border-[#292929]/50 p-4 rounded-xl">
             <span className="block font-bold text-zinc-400 mb-1">Catatan Pemesanan WhatsApp</span>
-            Klik tombol booking untuk menghasilkan format pesan otomatis. Harap diingat bahwa pengiriman pesan **tidak otomatis memesan unit**; ketersediaan unit baru resmi dikonfirmasi setelah tim administrator XPLAY memberikan konfirmasi balasan manual.
+            Klik tombol booking untuk menghasilkan format pesan otomatis. Harap diingat bahwa pengiriman pesan <strong className="font-bold text-zinc-300">tidak otomatis memesan unit</strong>; ketersediaan unit baru resmi dikonfirmasi setelah tim administrator XPLAY memberikan konfirmasi balasan manual.
           </div>
         </section>
 
@@ -513,7 +513,7 @@ export default function AvailabilityClient() {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">2. Sewa PS (Bawa Pulang)</h3>
                   <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
-                    Sewa unit konsol PlayStation 4 Slim, PS4 Pro, atau PS5 untuk dibawa pulang dan dimainkan di rumah. Unit yang disewakan **hanya berupa konsol dan aksesoris (tidak termasuk TV)**.
+                    Sewa unit konsol PlayStation 4 Slim, PS4 Pro, atau PS5 untuk dibawa pulang dan dimainkan di rumah. Unit yang disewakan <strong className="font-bold text-zinc-300">hanya berupa konsol dan aksesoris (tidak termasuk TV)</strong>.
                   </p>
                 </div>
                 <Link
